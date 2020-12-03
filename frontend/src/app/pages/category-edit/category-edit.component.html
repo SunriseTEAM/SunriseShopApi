@@ -1,0 +1,50 @@
+<br/><br/><br/><br/><br/>
+<h1 align="center" class="display-4 mb-5">Edit Category</h1>
+<div style="width:40%; margin: 25px auto">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <!--Id-->
+        <div class="form-group">
+            <label for="categoryId">Code</label>
+            <input [readOnly]="isEdit" [disabled]="isEdit" [(ngModel)]="category.categoryId" type="text"
+                   class="form-control form-control-lg" #categoryIdInput
+                   id="categoryId" name="categoryId" required #categoryId="ngModel">
+            <div *ngIf="categoryIdInput.invalid && (categoryIdInput.dirty ||categoryIdInput.touched)">
+                <div *ngIf="categoryIdInput.errors.required">
+                    Name is required.
+                </div>
+            </div>
+        </div>
+        <!--Name-->
+        <div class="form-group">
+            <label>Name</label>
+            <input [(ngModel)]="category.categoryName" type="text" class="form-control form-control-lg" id="categoryName"
+                   #categoryName="ngModel"
+                   name="categoryName" placeholder="Name" required>
+        </div>
+        <div *ngIf="categoryName.invalid && (categoryName.dirty ||categoryName.touched)">
+            <div *ngIf="categoryName.errors.required">
+                Name is required.
+            </div>
+        </div>
+
+        <!--Category-->
+        <div class="form-group">
+            <label for="categoryType">Category</label>
+            <select class="custom-select custom-select-lg " id="categoryType" name="categoryType"
+                    [(ngModel)]="category.categoryType"
+                    required>
+                <option [ngValue]=0>0</option>
+                <option [ngValue]=1>1</option>
+                <option [ngValue]=2>2</option>
+                <option [ngValue]=3>3</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" [disabled]="!form.form.valid" class="btn btn-lg btn-primary btn-block">Submit</button>
+        </div>
+    </form>
+
+
+</div>

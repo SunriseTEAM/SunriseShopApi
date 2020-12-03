@@ -1,0 +1,109 @@
+
+<header class="trasparent_nav">
+  <div class="wrapper">
+    <div class="logo" style="margin: 15px 10px">
+      <a href="#"><img src="../../../assets/images/logo3.png" alt="Fertile" height="60" width="190"></a>
+
+    </div>
+
+    <nav>
+      <ul>
+        <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
+               routerLink="/slide">
+          Home</a></li>
+        <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown">
+          <button class="dropbtn" routerLink="/category">Products</button>
+          <div class="dropdown-content">
+            <a class="nav-item nav-link"
+                                                                         routerLink="/category/0">
+              Women
+            </a >
+            <a  class="nav-item nav-link"
+                                                                          routerLink="/category/1">
+              Men
+            </a>
+            <a  class="nav-item nav-link"
+                                                                          routerLink="/category/2">
+              Shoes
+            </a>
+            <a  class="nav-item nav-link"
+                                                                          routerLink="/category/3">
+              Accessories
+            </a>
+          </div>
+        </li>
+        <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
+               routerLink="/about">
+          About</a></li>
+        <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
+               routerLink="/contact">
+          Contact</a></li>
+
+        <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown">
+          <button class="dropbtn" >Infomation</button>
+          <div class="dropdown-content">
+            <a  class="nav-item nav-link"
+                                                                         routerLink="/size">
+              Size Advice
+            </a >
+            <a   class="nav-item nav-link"
+                                                                          routerLink="/return">
+              Return Policy
+            </a>
+            <a   class="nav-item nav-link"
+                                                                          routerLink="/warranty">
+              Warranty Policy
+            </a>
+            <a  class="nav-item nav-link"
+                                                                          routerLink="/shipping">
+              Shipping Policy
+            </a>
+            <a   class="nav-item nav-link"
+                                                                          routerLink="/store">
+              Shop System
+            </a>
+          </div>
+        </li>
+
+        <li ><a *ngIf="!currentUser || currentUser.role == Role.Customer"
+          class="nav-item nav-link " routerLink="/cart">
+          <i class="fas fa-shopping-cart"></i>
+          Cart
+        </a></li>
+        <ng-container *ngIf="currentUser; else noUser">
+          <li><a *ngIf="currentUser.role != Role.Customer" class="nav-item nav-link " routerLink="/categoryList">
+            <i class="fas fa-list-ul"></i>
+            Category
+          </a></li>
+          <li><a *ngIf="currentUser.role != Role.Customer" class="nav-item nav-link " routerLink="/productList">
+            <i class="fas fa-list-ul"></i>
+            Products
+          </a></li>
+          <li><a class="nav-item nav-link " routerLink="/order">
+            <i class="fas fa-list-ul"></i>
+            Orders
+          </a></li>
+          <li><a class="nav-item nav-link " routerLink="/profile">
+            {{name}}
+          </a></li>
+          <li><a class="nav-item nav-link " (click)="logout()" routerLink="/login" [queryParams]="{logout: true}">
+            Sign Out
+          </a></li>
+        </ng-container>
+
+        <ng-template #noUser>
+          <li><a class="nav-item nav-link " routerLink="/login">
+            Sign In
+          </a></li>
+          <li><a class="nav-item nav-link " routerLink="/register">
+            Sign Up
+          </a></li>
+        </ng-template>
+      </ul>
+
+    </nav>
+  </div>
+</header>
+
+
+

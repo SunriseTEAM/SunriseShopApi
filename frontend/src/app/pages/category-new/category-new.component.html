@@ -1,0 +1,38 @@
+<br/><br/><br/><br/><br/>
+<h1 align="center" class="display-4 mb-5">New Category</h1>
+<div style="width:40%; margin: 25px auto">
+    <form (ngSubmit)="onSubmit()">
+        <!--Id-->
+      <div class="form-group">
+        <label for="id">Id:</label>
+        <input type="text" class="form-control" placeholder="Enter Id"
+               id="id" required [(ngModel)]="category.categoryId" name="id">
+      </div>
+
+        <!--Name-->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Name"
+               id="name" required [(ngModel)]="category.categoryName" name="name">
+      </div>
+
+        <!--Category-->
+        <div class="form-group">
+            <label for="categoryType">Category</label>
+            <select class="custom-select custom-select-lg " id="categoryType" name="categoryType"
+                    [(ngModel)]="category.categoryType"
+                    required>
+                <option [ngValue]=0>0</option>
+                <option [ngValue]=1>1</option>
+                <option [ngValue]=2>2</option>
+                <option [ngValue]=3>3</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <button type="submit"(click)="save()" class="btn btn-lg btn-primary btn-block">Submit</button>
+        </div>
+    </form>
+
+
+</div>

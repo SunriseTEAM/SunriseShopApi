@@ -1,0 +1,125 @@
+<br/><br/><br/><br/><br/>
+<h3 align="center" >{{title}}</h3><br/>
+<div class="container">
+  <div class="card_detail">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+      <img  class="card-img-top" style="width: 350px; height: 400px;margin: 0 145px" src="{{productInfo?.productIcon}}">
+      </div>
+        <div class="details col-md-6" >
+      <div class="card-body"  >
+        <h4 class="card-title "  style="color: #ff7315">{{productInfo?.productName}}</h4>
+        <form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
+          <div class="text-left">
+            <input hidden name="productId" [value]=productInfo?.productId>
+
+            <p class="card-text">
+              <strong>Price: </strong>
+              <label id="price">{{productInfo?.productPrice | currency}}</label>
+            </p>
+            <p class="card-text"><strong>Stock: </strong>{{productInfo?.productStock}}</p>
+
+            <label class="card-text">
+              <strong>Quantity: </strong>
+              <input [(ngModel)]=count
+                     (change)="validateCount()"
+                     type="number"
+                     name="count"
+                     required
+                     min="1"
+                     [max]=productInfo?.productStock
+              >
+            </label>
+
+            <p class="card-test"><strong>Description: </strong>{{productInfo?.productDescription}}</p>
+          </div>
+          <button type="submit" [disabled]="!form.form.valid" *ngIf="productInfo?.productStatus == 0; else offBlock"
+                  class="btn btn-primary btn-lg"
+          >Add to Cart
+          </button>
+          <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
+        </form>
+
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="container">-->
+<!--  <div class="card_detail">-->
+<!--    <div class="container-fliud">-->
+<!--      <div class="wrapper row">-->
+<!--        <div class="preview col-md-6">-->
+
+<!--          <div class="preview-pic tab-content" style="width: 350px; height: 500px;margin: 0 145px">-->
+<!--            <div class="tab-pane active" id="pic-1"><img class="img-fluid w-100"-->
+<!--                                                         src="{{productInfo?.productIcon}}"/>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--        <div class="details col-md-6">-->
+<!--          <h3 class="product-title">{{productInfo?.productName}}</h3>-->
+<!--          <div class="rating">-->
+<!--            <div class="stars">-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star checked"></span>-->
+<!--              <span class="fa fa-star"></span>-->
+<!--              <span class="fa fa-star"></span>-->
+<!--            </div>-->
+<!--            <span class="review-no">41 reviews</span>-->
+<!--            <h4>Product Description:</h4>-->
+<!--            <p class="product-description">{{productInfo?.productDescription}}</p>-->
+<!--            <h4 class="price">current price: <span>{{productInfo?.productPrice | currency}}</span></h4>-->
+<!--            <p class="card-text"><strong>Stock: </strong>{{productInfo?.productStock}}</p>-->
+<!--            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>-->
+<!--            <label class="card-text">-->
+<!--              <strong>Quantity: </strong>-->
+<!--              <input [(ngModel)]=count-->
+<!--                     (change)="validateCount()"-->
+<!--                     type="number"-->
+<!--                     name="count"-->
+<!--                     required-->
+<!--                     min="1"-->
+<!--                     [max]=productInfo?.productStock-->
+<!--              >-->
+<!--            </label>-->
+<!--            <p class="card-text"><strong>Subtotal: </strong>-->
+<!--              <label id="subtotal">{{count * productInfo?.productPrice | currency}}</label>-->
+<!--            </p>-->
+
+<!--            <div class="action">-->
+<!--              <button class="add-to-cart btn btn-default" [disabled]="!form.form.valid" *ngIf="productInfo?.productStatus == 0; else offBlock" type="button">add to cart</button> &nbsp;-->
+<!--&lt;!&ndash;              <button class="like btn btn-default" (click)="addFavourite(product)" type="button"><span class="fa fa-heart"></span></button>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="container pb-cmnt-container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-md-6 col-md-offset-3">-->
+<!--          <div class="panel panel-info">-->
+<!--            <div class="panel-body">-->
+<!--              <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>-->
+<!--              <form class="form-inline">-->
+<!--                <div class="btn-group">-->
+<!--                  <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>-->
+<!--                  <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>-->
+<!--                  <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>-->
+<!--                  <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>-->
+<!--                </div>-->
+<!--                <button class="btn btn-primary pull-right" type="button">Share</button>-->
+<!--              </form>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
