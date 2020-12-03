@@ -83,6 +83,10 @@
             <i class="fas fa-list-ul"></i>
             Orders
           </a></li>
+          <li><a *ngIf="currentUser.role != Role.Customer" class="nav-item nav-link " routerLink="/userList">
+            <i class="fas fa-list-ul"></i>
+            Users
+          </a></li>
           <li><a class="nav-item nav-link " routerLink="/profile">
             {{name}}
           </a></li>
