@@ -24,6 +24,8 @@ import {ShippingComponent} from './parts/shipping/shipping.component';
 import {StoreComponent} from './parts/store/store.component';
 import {AboutComponent} from './parts/about/about.component';
 import {ContactComponent} from './parts/contact/contact.component';
+import {UserListComponent} from './pages/user-list/user.list.component';
+import {UserNewComponent} from './pages/user-new/user-new.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/slide', pathMatch: 'full'},
@@ -101,6 +103,16 @@ const routes: Routes = [
     component: CategoryNewComponent,
     canActivate: [AuthGuard],
     data: {roles: [Role.Employee]}
+  },
+  {path: 'userList',
+    component: UserListComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.Manager, Role.Employee]}
+  },
+  {path: 'user/new',
+    component: UserNewComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.Manager]}
   },
 
 ];
