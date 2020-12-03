@@ -13,6 +13,8 @@ public enum ResultEnum  {
     PRODUCT_NOT_IN_CART(14,"Product is not in the cart!"),
     CART_CHECKOUT_SUCCESS(20, "Checkout successfully! "),
 
+    USER_NOT_EXIST(10, "User does not exit!"),
+
     CATEGORY_NOT_FOUND(30, "Category does not exit!"),
 
     ORDER_NOT_FOUND(60, "OrderMain is not exit!"),
