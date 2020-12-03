@@ -33,6 +33,8 @@ import {StoreComponent} from './parts/store/store.component';
 import {AboutComponent} from './parts/about/about.component';
 import {ContactComponent} from './parts/contact/contact.component';
 import {FooterComponent} from './parts/footer/footer.component';
+import {UserListComponent} from './pages/user-list/user.list.component';
+import {UserNewComponent} from './pages/user-new/user-new.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import {FooterComponent} from './parts/footer/footer.component';
       ProductNewComponent,
       CategoryNewComponent,
       CategoryEditComponent,
+      UserListComponent,
+      UserNewComponent,
       SlideComponent,
       SizeComponent,
       ReturnPolicyComponent,
