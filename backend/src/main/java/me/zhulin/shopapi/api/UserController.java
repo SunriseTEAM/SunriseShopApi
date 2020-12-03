@@ -6,6 +6,8 @@ import me.zhulin.shopapi.service.UserService;
 import me.zhulin.shopapi.vo.request.LoginForm;
 import me.zhulin.shopapi.vo.response.JwtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -78,5 +80,22 @@ public class UserController {
             return ResponseEntity.badRequest().build();
         }
 
+    }
+
+    @GetMapping("/userList")
+    public Page<User> userList(@RequestParam(value = "page", defaultValue = "1") Integer page,
+                               @RequestParam(value = "size", defaultValue = "3") Integer size,
+                               Authentication authentication) {
+        PageRequest request = PageRequest.of(page - 1, size);
+        Page<User> userPage;
+
+        userPage = userService.findAll(request);
+
+        return userPage;
+    }
+    @DeleteMapping("/delete/user/{id}")
+    public ResponseEntity delete(@PathVariable("id") Long id) {
+        userService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }
