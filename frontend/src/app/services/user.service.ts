@@ -11,7 +11,8 @@ import {User} from "../models/User";
     providedIn: 'root'
 })
 export class UserService {
-
+  private userUrl = `${apiUrl}/userList`;
+  private userUrl1 = `${apiUrl}/delete/user`;
     private currentUserSubject: BehaviorSubject<JwtResponse>;
     public currentUser: Observable<JwtResponse>;
     public nameTerms = new Subject<string>();
@@ -67,6 +68,18 @@ export class UserService {
         const url = `${apiUrl}/profile/${email}`;
         return this.http.get<User>(url);
     }
+
+  getAllInPage(page: number, size: number): Observable<any> {
+    const url = `${this.userUrl}?page=${page}&size=${size}`;
+    return this.http.get(url)
+      .pipe(
+        // tap(_ => console.log(_)),
+      )
+  }
+
+  delete(id: User): Observable<any> {
+    return this.http.delete<any>(`${this.userUrl1}/${id}`);
+  }
 
     /**
      * Handle Http operation that failed.
