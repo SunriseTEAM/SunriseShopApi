@@ -11,8 +11,8 @@
         <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
                routerLink="/slide">
           Home</a></li>
-        <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown">
-          <button class="dropbtn" routerLink="/category">Products</button>
+        <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown" >
+          <a  class="nav-item nav-link" routerLink="/category">Products</a>
           <div class="dropdown-content">
             <a class="nav-item nav-link"
                                                                          routerLink="/category/0">
@@ -40,7 +40,7 @@
           Contact</a></li>
 
         <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown">
-          <button class="dropbtn" >Infomation</button>
+          <a class="nav-item nav-link" >Infomation</a>
           <div class="dropdown-content">
             <a  class="nav-item nav-link"
                                                                          routerLink="/size">
