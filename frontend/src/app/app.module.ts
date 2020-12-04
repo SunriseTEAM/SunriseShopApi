@@ -35,6 +35,7 @@ import {ContactComponent} from './parts/contact/contact.component';
 import {FooterComponent} from './parts/footer/footer.component';
 import {UserListComponent} from './pages/user-list/user.list.component';
 import {UserNewComponent} from './pages/user-new/user-new.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import {UserNewComponent} from './pages/user-new/user-new.component';
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
