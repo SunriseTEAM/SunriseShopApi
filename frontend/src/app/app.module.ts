@@ -36,6 +36,8 @@ import {FooterComponent} from './parts/footer/footer.component';
 import {UserListComponent} from './pages/user-list/user.list.component';
 import {UserNewComponent} from './pages/user-new/user-new.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+
 
 
 @NgModule({
@@ -67,7 +69,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
       StoreComponent,
       AboutComponent,
       ContactComponent,
-      FooterComponent
+      FooterComponent,
     ],
     imports: [
         BrowserModule,
@@ -75,7 +77,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
-
+        Ng2SearchPipeModule
     ],
     providers: [CookieService,
         {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},

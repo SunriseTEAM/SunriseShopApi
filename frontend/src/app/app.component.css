@@ -1,6 +1,11 @@
+router-outlet ~ * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 
 button {
-  background: #ff7315;
+  background: #ff5063;
   color: white;
   padding: 20px;
   border: none;

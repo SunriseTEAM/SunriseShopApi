@@ -19,18 +19,12 @@ export class UserNewComponent implements OnInit {
                private userService: UserService,
                private router: Router) {
     this.user = new User();
-
   }
 
+  ngOnInit() {}
 
-
-  ngOnInit() {
-
-
-  }
   onSubmit() {
     this.userService.signUp(this.user).subscribe(u => {
-
       },
       e => {});
   }

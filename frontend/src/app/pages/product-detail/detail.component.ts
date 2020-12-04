@@ -5,6 +5,9 @@ import {CartService} from '../../services/cart.service';
 import {CookieService} from 'ngx-cookie-service';
 import {ProductInOrder} from '../../models/ProductInOrder';
 import {ProductInfo} from '../../models/productInfo';
+import {UserService} from '../../services/user.service';
+import {User} from '../../models/User';
+import {JwtResponse} from '../../response/JwtResponse';
 
 @Component({
   selector: 'app-detail',
@@ -21,6 +24,7 @@ export class DetailComponent implements OnInit {
       private cartService: CartService,
       private cookieService: CookieService,
       private route: ActivatedRoute,
+      private userService: UserService,
       private router: Router
   ) {
   }
@@ -74,4 +78,5 @@ export class DetailComponent implements OnInit {
       this.count = 1;
     }
   }
+
 }

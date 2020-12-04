@@ -10,8 +10,6 @@ import {Subscription} from "rxjs";
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit, OnDestroy {
-
-
   title: string;
   page: any;
   private paramSub: Subscription;
@@ -20,14 +18,11 @@ export class CardComponent implements OnInit, OnDestroy {
   selectedBrand="All";
   status ="all";
   productsList: any;
+  searchText
 
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute,
-             ) {
-
-  }
-
+              private route: ActivatedRoute,) {}
 
   ngOnInit() {
     this.querySub = this.route.queryParams.subscribe(() => {
@@ -68,9 +63,6 @@ export class CardComponent implements OnInit, OnDestroy {
           this.page = categoryPage.page;
         });
     }
-
   }
-
-
 
 }
