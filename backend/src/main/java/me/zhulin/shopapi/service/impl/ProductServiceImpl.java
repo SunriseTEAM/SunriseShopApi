@@ -107,8 +107,6 @@ public class ProductServiceImpl implements ProductService {
         if(productInfo.getProductStatus() > 1) {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
-
-
         return productInfoRepository.save(productInfo);
     }
 

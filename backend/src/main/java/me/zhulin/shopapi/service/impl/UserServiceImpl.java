@@ -58,7 +58,6 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             throw new MyException(ResultEnum.VALID_ERROR);
         }
-
     }
 
     @Override
@@ -77,7 +76,6 @@ public class UserServiceImpl implements UserService {
         User user = findUserById(id);
         if (user == null) throw new MyException(ResultEnum.USER_NOT_EXIST);
         userRepository.delete(user);
-
     }
 
     @Override

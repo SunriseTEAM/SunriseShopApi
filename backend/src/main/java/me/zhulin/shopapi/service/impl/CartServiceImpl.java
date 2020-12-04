@@ -73,8 +73,6 @@ public class CartServiceImpl implements CartService {
         });
     }
 
-
-
     @Override
     @Transactional
     public void checkout(User user) {
@@ -89,6 +87,5 @@ public class CartServiceImpl implements CartService {
             productService.decreaseStock(productInOrder.getProductId(), productInOrder.getCount());
             productInOrderRepository.save(productInOrder);
         });
-
     }
 }

@@ -26,12 +26,4 @@ public enum ProductStatusEnum implements CodeEnum{
     public Integer getCode() {
         return code;
     }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }

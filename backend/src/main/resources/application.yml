@@ -1,7 +1,7 @@
 ## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 12345678
     url: jdbc:mysql://localhost:3306/demo
@@ -19,15 +19,6 @@ spring:
         temp:
           use_jdbc_metadata_defaults: false;
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-  #      dialect: org.hibernate.dialect.MySQL5Dialect
-
-#  jackson:
-#    default-property-inclusion: non_null
-#  redis:
-#    host: localhost
-#    port: 6379
-#  freemarker:
-#      cache: false
 
 
 
@@ -39,5 +30,5 @@ server:
   servlet:
     contextPath: /api
 
-jwtSecret: me.zhulin
+jwtSecret: me.sunrise
 jwtExpiration: 86400

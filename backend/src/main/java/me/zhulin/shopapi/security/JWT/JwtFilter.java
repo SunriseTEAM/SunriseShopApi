@@ -16,9 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Created By Zhu Lin on 1/1/2019.
- */
 @Component
 public class JwtFilter extends OncePerRequestFilter {
     @Autowired
