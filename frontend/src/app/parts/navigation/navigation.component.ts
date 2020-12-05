@@ -4,6 +4,8 @@ import {Subscription} from "rxjs";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Router} from "@angular/router";
 import {Role} from "../../enum/Role";
+import {TranslateService} from '../../services/translate.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-navigation',
@@ -11,7 +13,14 @@ import {Role} from "../../enum/Role";
     styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit, OnDestroy {
-
+  languageList = [
+    { language: "Vietnamese", langCode: "vi" },
+    { language: "English", langCode: "en" },
+    { language: "French", langCode: "fr" },
+    { language: "Persian", langCode: "fa" },
+    { language: "Japanese", langCode: "ja" },
+    { language: "Hindi", langCode: "hin" },
+  ];
 
     currentUserSubscription: Subscription;
     name$;
@@ -22,6 +31,8 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
     constructor(private userService: UserService,
                 private router: Router,
+                private toastr: ToastrService,
+                public translate: TranslateService,
     ) {
 
     }
@@ -46,7 +57,11 @@ export class NavigationComponent implements OnInit, OnDestroy {
 
     logout() {
         this.userService.logout();
+      this.toastr.warning('Logout Success!', 'Thank you!');
         // this.router.navigate(['/login'], {queryParams: {logout: 'true'}} );
     }
-
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
 }

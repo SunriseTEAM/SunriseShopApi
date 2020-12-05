@@ -4,6 +4,7 @@ import {Subscription} from "rxjs";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Router} from "@angular/router";
 import {Role} from "../../enum/Role";
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-slide',
@@ -40,6 +41,7 @@ export class SlideComponent implements OnInit, OnDestroy {
 
     constructor(private userService: UserService,
                 private router: Router,
+                public translate: TranslateService,
     ) {
 
     }

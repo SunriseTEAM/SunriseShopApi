@@ -10,9 +10,9 @@
       <ul>
         <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
                routerLink="/slide">
-          Home</a></li>
+          {{ this.translate.data["HOME"] | translate }}</a></li>
         <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown" >
-          <a  class="nav-item nav-link" routerLink="/category">Products</a>
+          <a  class="nav-item nav-link" routerLink="/category">{{ this.translate.data["PRODUCTS"] | translate }}</a>
           <div class="dropdown-content">
             <a class="nav-item nav-link"
                                                                          routerLink="/category/0">
@@ -34,41 +34,52 @@
         </li>
         <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
                routerLink="/about">
-          About</a></li>
+          {{ this.translate.data["ABOUT"] | translate }}</a></li>
         <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
                routerLink="/contact">
-          Contact</a></li>
+          {{ this.translate.data["CONTACT"] | translate }}</a></li>
 
         <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown">
-          <a class="nav-item nav-link" >Infomation</a>
+          <a class="nav-item nav-link" >{{ this.translate.data["Infomation"] | translate }}</a>
           <div class="dropdown-content">
             <a  class="nav-item nav-link"
                                                                          routerLink="/size">
-              Size Advice
+              {{ this.translate.data["SIZE"] | translate }}
             </a >
             <a   class="nav-item nav-link"
                                                                           routerLink="/return">
-              Return Policy
+              {{ this.translate.data["RETURN POLICY"] | translate }}
             </a>
             <a   class="nav-item nav-link"
                                                                           routerLink="/warranty">
-              Warranty Policy
+              {{ this.translate.data["GUARANTEE"] | translate }}
             </a>
             <a  class="nav-item nav-link"
                                                                           routerLink="/shipping">
-              Shipping Policy
+              {{ this.translate.data["TRANSPORT"] | translate }}
             </a>
             <a   class="nav-item nav-link"
                                                                           routerLink="/store">
-              Shop System
+              {{ this.translate.data["STORE"] | translate }}
             </a>
           </div>
         </li>
-
+        <li class="dropdown">
+          <a class="nav-item nav-link" ><i class="fa fa-globe"></i>
+            Language</a>
+          <div class="dropdown-content">
+            <a  class="nav-item nav-link"
+                href="javascript:;;" (click)="setLang(lang.langCode)"
+                *ngFor="let lang of languageList">
+              <i class="fa fa-flag"></i>
+              {{ lang.language }} ({{ lang.langCode }})
+            </a >
+          </div>
+        </li>
         <li ><a *ngIf="!currentUser || currentUser.role == Role.Customer"
           class="nav-item nav-link " routerLink="/cart">
           <i class="fas fa-shopping-cart"></i>
-          Cart
+          {{ this.translate.data["Cart"] | translate }}
         </a></li>
         <ng-container *ngIf="currentUser; else noUser">
           <li><a *ngIf="currentUser.role != Role.Customer" class="nav-item nav-link " routerLink="/categoryList">
@@ -97,10 +108,10 @@
 
         <ng-template #noUser>
           <li><a class="nav-item nav-link " routerLink="/login">
-            Sign In
+            {{ this.translate.data["Login"] | translate }}
           </a></li>
           <li><a class="nav-item nav-link " routerLink="/register">
-            Sign Up
+            {{ this.translate.data["Sign up"] | translate }}
           </a></li>
         </ng-template>
       </ul>

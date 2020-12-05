@@ -2,6 +2,7 @@ import {AfterContentChecked, Component, OnInit} from '@angular/core';
 import {ProductInfo} from "../../models/productInfo";
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-product-new',
@@ -14,6 +15,7 @@ export class ProductNewComponent implements OnInit, AfterContentChecked {
 
     constructor(private productService: ProductService,
                 private route: ActivatedRoute,
+                private toastr: ToastrService,
                 private router: Router) {
     }
 
@@ -62,7 +64,8 @@ export class ProductNewComponent implements OnInit, AfterContentChecked {
 
         console.log(data);
         this.router.navigate(['/seller']);
-        window.alert('Thêm mới thành công!')
+        this.toastr.success('Add Product Success!', 'Reset!');
+
       }, error => {
         console.log(error);
       });

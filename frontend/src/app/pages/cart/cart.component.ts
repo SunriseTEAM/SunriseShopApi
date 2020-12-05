@@ -7,6 +7,7 @@ import {ProductInOrder} from '../../models/ProductInOrder';
 import {debounceTime, switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from '../../enum/Role';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-cart',
@@ -17,6 +18,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
     constructor(private cartService: CartService,
                 private userService: UserService,
+                private toastr: ToastrService,
                 private router: Router) {
         this.userSubscription = this.userService.currentUser.subscribe(user => this.currentUser = user);
     }
@@ -95,6 +97,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
             success => {
                this.productInOrders = this.productInOrders.filter(e => e.productId !== productInOrder.productId);
                 console.log('Cart: ' + this.productInOrders);
+              this.toastr.warning('Remove cart success!', 'Continue shopping!');
             },
             _ => console.log('Remove Cart Failed'));
     }

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {NavigationComponent} from './parts/navigation/navigation.component';
@@ -37,8 +37,13 @@ import {UserListComponent} from './pages/user-list/user.list.component';
 import {UserNewComponent} from './pages/user-new/user-new.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {TranslateService} from './services/translate.service';
+import {TranslatePipe} from './pipes/translate.pipe';
+import {ToastrModule} from 'ngx-toastr';
 
-
+export function setupTranslateFactory(service: TranslateService) {
+  return () => service.use("en");
+}
 
 @NgModule({
     declarations: [
@@ -70,6 +75,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
       AboutComponent,
       ContactComponent,
       FooterComponent,
+      TranslatePipe,
     ],
     imports: [
         BrowserModule,
@@ -77,11 +83,14 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
         AppRoutingModule,
         FormsModule,
         HttpClientModule,
-        Ng2SearchPipeModule
+        Ng2SearchPipeModule,
+      ToastrModule.forRoot(),
     ],
-    providers: [CookieService,
+    providers: [CookieService,TranslateService,
+      {provide: APP_INITIALIZER, useFactory: setupTranslateFactory, deps: [TranslateService], multi: true,},
         {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
-        {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}],
+        {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+        ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

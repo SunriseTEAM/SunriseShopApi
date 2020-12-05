@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Role} from "../../enum/Role";
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-login',
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
 
     constructor(private userService: UserService,
                 private router: Router,
+                private toastr: ToastrService,
                 private route: ActivatedRoute) {
     }
 
@@ -38,10 +40,10 @@ export class LoginComponent implements OnInit {
             user => {
                 if (user) {
                     if (user.role != Role.Customer) {
-
                         this.returnUrl = '/seller';
-                    }
 
+                    }
+                  this.toastr.success('Authentication Success!', 'Logged in!');
                     this.router.navigateByUrl(this.returnUrl);
                 } else {
                     this.isLogout = false;
