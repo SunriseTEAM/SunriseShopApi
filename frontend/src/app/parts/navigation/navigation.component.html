@@ -1,8 +1,8 @@
 
 <header class="trasparent_nav">
   <div class="wrapper">
-    <div class="logo" style="margin: 15px 10px">
-      <a href="#"><img src="../../../assets/images/logo3.png" alt="Fertile" height="60" width="190"></a>
+    <div class="logo" style="margin: 25px 10px">
+      <a href="#"><img src="../../../assets/images/logo3.png" alt="Fertile" height="50" width="160"></a>
 
     </div>
 
@@ -11,63 +11,135 @@
         <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
                routerLink="/slide">
           {{ this.translate.data["HOME"] | translate }}</a></li>
-        <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown" >
-          <a  class="nav-item nav-link" routerLink="/category">{{ this.translate.data["PRODUCTS"] | translate }}</a>
-          <div class="dropdown-content">
-            <a class="nav-item nav-link"
-                                                                         routerLink="/category/0">
-              Women
-            </a >
-            <a  class="nav-item nav-link"
-                                                                          routerLink="/category/1">
-              Men
-            </a>
-            <a  class="nav-item nav-link"
-                                                                          routerLink="/category/2">
-              Shoes
-            </a>
-            <a  class="nav-item nav-link"
-                                                                          routerLink="/category/3">
-              Accessories
-            </a>
-          </div>
-        </li>
-        <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
-               routerLink="/about">
-          {{ this.translate.data["ABOUT"] | translate }}</a></li>
-        <li><a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
-               routerLink="/contact">
-          {{ this.translate.data["CONTACT"] | translate }}</a></li>
 
-        <li *ngIf="!currentUser || currentUser.role == Role.Customer" class="dropdown">
-          <a class="nav-item nav-link" >{{ this.translate.data["Infomation"] | translate }}</a>
-          <div class="dropdown-content">
-            <a  class="nav-item nav-link"
-                                                                         routerLink="/size">
-              {{ this.translate.data["SIZE"] | translate }}
-            </a >
-            <a   class="nav-item nav-link"
-                                                                          routerLink="/return">
-              {{ this.translate.data["RETURN POLICY"] | translate }}
-            </a>
-            <a   class="nav-item nav-link"
-                                                                          routerLink="/warranty">
-              {{ this.translate.data["GUARANTEE"] | translate }}
-            </a>
-            <a  class="nav-item nav-link"
-                                                                          routerLink="/shipping">
-              {{ this.translate.data["TRANSPORT"] | translate }}
-            </a>
-            <a   class="nav-item nav-link"
-                                                                          routerLink="/store">
-              {{ this.translate.data["STORE"] | translate }}
-            </a>
+
+        <li class="nav-item dropdown has-mega-menu" style="position:static;">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["MENCLOTHING"] | translate }}</a>
+          <div class="dropdown-content" style="width:80%;  left: 140px">
+            <div class="px-0 container">
+              <div class="row">
+                <div class="col-md-3">
+                  <br/>
+                  <a class="nav-item nav-link" routerLink="/category/0">
+                    {{ this.translate.data["WOMEN"] | translate }}
+                  </a >
+                  <a  class="nav-item nav-link" routerLink="/category/1">
+                    {{ this.translate.data["MEN"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/category/2">
+                    {{ this.translate.data["SHOES"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/category/3">
+                    {{ this.translate.data["ACCESSORIES"] | translate }}
+                  </a>
+                </div>
+                <div class="col-md-3">
+                  <br/>
+                  <a class="dropdown-item" href="men.html">T-Shirts</a>
+                  <a class="dropdown-item" href="men.html">Trousers</a>
+                  <a class="dropdown-item" href="men.html">Shirts</a>
+                  <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                  <a class="dropdown-item" href="men.html">Coats & Jackets</a>
+                </div>
+
+                <div class="col-md-4">
+
+                  <img src="../../../assets/images/e8.jpg" height="300" width="550"/>
+                </div>
+              </div>
+            </div>
           </div>
         </li>
+
+        <li class="nav-item dropdown has-mega-menu" style="position:static;">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["WOMENCLOTHING"] | translate }}</a>
+          <div class="dropdown-content" style="width:80%;  left: 140px">
+            <div class="px-0 container">
+              <div class="row">
+                <div class="col-md-4">
+
+                  <img src="../../../assets/images/e10.jpg" height="300" width="550"/>
+                </div>
+                <div class="col-md-3" style="left: 180px">
+                  <br/>
+                  <a class="nav-item nav-link" routerLink="/category/0">
+                    {{ this.translate.data["WOMEN"] | translate }}
+                  </a >
+                  <a  class="nav-item nav-link" routerLink="/category/1">
+                    {{ this.translate.data["MEN"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/category/2">
+                    {{ this.translate.data["SHOES"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/category/3">
+                    {{ this.translate.data["ACCESSORIES"] | translate }}
+                  </a>
+                </div>
+                <div class="col-md-3" style="left: 180px">
+                  <br/>
+                  <a class="dropdown-item" href="men.html">T-Shirts</a>
+                  <a class="dropdown-item" href="men.html">Trousers</a>
+                  <a class="dropdown-item" href="men.html">Shirts</a>
+                  <a class="dropdown-item" href="men.html">Suits & Blazers</a>
+                  <a class="dropdown-item" href="men.html">Coats & Jackets</a>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown has-mega-menu" style="position:static;">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["INFOMATION"] | translate }}</a>
+          <div class="dropdown-content" style="width:82%;  left: 115px">
+            <div class="px-0 container">
+              <div class="row">
+
+                <div class="col-md-4">
+
+                  <img src="../../../assets/images/e10.jpg" height="300" width="550"/>
+                </div>
+                <div class="col-md-3"style="left: 200px" >
+                  <br/>
+                  <a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
+                                                                               routerLink="/about">
+                    {{ this.translate.data["ABOUT"] | translate }}</a>
+                  <a *ngIf="!currentUser || currentUser.role == Role.Customer" class="nav-item nav-link"
+                                                                               routerLink="/contact">
+                    {{ this.translate.data["CONTACT"] | translate }}</a>
+
+                </div>
+                <div class="col-md-4" style="left: 80px;">
+                  <br/>
+                  <a  class="nav-item nav-link" routerLink="/size">
+                    {{ this.translate.data["SIZE"] | translate }}
+                  </a >
+                  <a   class="nav-item nav-link" routerLink="/return">
+                    {{ this.translate.data["RETURN POLICY"] | translate }}
+                  </a>
+                  <a   class="nav-item nav-link" routerLink="/warranty">
+                    {{ this.translate.data["GUARANTEE"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/shipping">
+                    {{ this.translate.data["TRANSPORT"] | translate }}
+                  </a>
+                  <a   class="nav-item nav-link" routerLink="/store">
+                    {{ this.translate.data["STORE"] | translate }}
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+
         <li class="dropdown">
           <a class="nav-item nav-link" ><i class="fa fa-globe"></i>
-            Language</a>
-          <div class="dropdown-content">
+            {{ this.translate.data["LANGUAGE"] | translate }}</a>
+          <div class="dropdown-langugue" >
             <a  class="nav-item nav-link"
                 href="javascript:;;" (click)="setLang(lang.langCode)"
                 *ngFor="let lang of languageList">
@@ -75,7 +147,7 @@
               {{ lang.language }} ({{ lang.langCode }})
             </a >
           </div>
-        </li>
+<!--        </li>-->
         <li ><a *ngIf="!currentUser || currentUser.role == Role.Customer"
           class="nav-item nav-link " routerLink="/cart">
           <i class="fas fa-shopping-cart"></i>

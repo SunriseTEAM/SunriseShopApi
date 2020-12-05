@@ -16,10 +16,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   languageList = [
     { language: "Vietnamese", langCode: "vi" },
     { language: "English", langCode: "en" },
-    { language: "French", langCode: "fr" },
-    { language: "Persian", langCode: "fa" },
     { language: "Japanese", langCode: "ja" },
-    { language: "Hindi", langCode: "hin" },
   ];
 
     currentUserSubscription: Subscription;
