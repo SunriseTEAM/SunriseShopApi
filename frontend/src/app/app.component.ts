@@ -1,5 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {fadeAnimation} from './animations/fadeIntRoute';
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   showScrollHeight = 300;
   hideScrollHeight = 10;
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) { }
 
   @HostListener('window:scroll', [])
   onWindowScroll()
@@ -28,7 +29,11 @@ export class AppComponent {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);}
 
   scrollToTop()
   {

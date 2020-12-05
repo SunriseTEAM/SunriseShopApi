@@ -40,6 +40,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {TranslateService} from './services/translate.service';
 import {TranslatePipe} from './pipes/translate.pipe';
 import {ToastrModule} from 'ngx-toastr';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 export function setupTranslateFactory(service: TranslateService) {
   return () => service.use("en");
@@ -84,6 +85,7 @@ export function setupTranslateFactory(service: TranslateService) {
         FormsModule,
         HttpClientModule,
         Ng2SearchPipeModule,
+        NgxSpinnerModule,
       ToastrModule.forRoot(),
     ],
     providers: [CookieService,TranslateService,
