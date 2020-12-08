@@ -111,7 +111,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
             this.cartService.checkout().subscribe(
                 _ => {
                     this.productInOrders = [];
-                  this.toastr.success('Checkout Cart Success!', 'Amazing!');
+                  this.toastr.success('Waiting for approval', 'Checkout Cart Success!!');
                 },
                 error1 => {
                     console.log('Checkout Cart Failed');

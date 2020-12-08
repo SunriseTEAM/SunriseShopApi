@@ -3,7 +3,8 @@ package me.sunrise.shopapi.enums;
 public enum OrderStatusEnum implements CodeEnum {
     NEW(0, "New OrderMain"),
     FINISHED(1, "Finished"),
-    CANCELED(2, "Canceled")
+    CANCELED(2, "Canceled"),
+    APPROVED(3, "Approved")
     ;
 
     private  int code;

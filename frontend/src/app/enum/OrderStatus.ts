@@ -1,5 +1,6 @@
 export enum OrderStatus {
-    "New",
+    "Pending",
     "Finished",
-    "Cenceled"
+    "Cenceled",
+    "Approved"
 }

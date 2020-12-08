@@ -31,6 +31,12 @@ export class OrderService {
         );
     }
 
+  approved(id): Observable<Order> {
+    return this.http.patch<Order>(`${this.orderUrl}/approved/${id}`, null).pipe(
+      catchError(_ => of(null))
+    );
+  }
+
     finish(id): Observable<Order> {
         return this.http.patch<Order>(`${this.orderUrl}/finish/${id}`, null).pipe(
             catchError(_ => of(null))

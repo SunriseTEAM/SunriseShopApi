@@ -65,11 +65,24 @@ public class OrderServiceImpl implements OrderService {
     @Transactional
     public OrderMain finish(Long orderId) {
         OrderMain orderMain = findOne(orderId);
-        if(!orderMain.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
+        if(!orderMain.getOrderStatus().equals(OrderStatusEnum.APPROVED.getCode())) {
             throw new MyException(ResultEnum.ORDER_STATUS_ERROR);
         }
 
         orderMain.setOrderStatus(OrderStatusEnum.FINISHED.getCode());
+        orderRepository.save(orderMain);
+        return orderRepository.findByOrderId(orderId);
+    }
+
+    @Override
+    @Transactional
+    public OrderMain approved(Long orderId) {
+        OrderMain orderMain = findOne(orderId);
+        if(!orderMain.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
+            throw new MyException(ResultEnum.ORDER_STATUS_ERROR);
+        }
+
+        orderMain.setOrderStatus(OrderStatusEnum.APPROVED.getCode());
         orderRepository.save(orderMain);
         return orderRepository.findByOrderId(orderId);
     }

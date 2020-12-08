@@ -4,6 +4,7 @@ import {User} from "../../models/User";
 import {UserService} from "../../services/user.service";
 import {Router} from "@angular/router";
 import {TranslateService} from '../../services/translate.service';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -17,6 +18,7 @@ export class SignupComponent implements OnInit {
   constructor( private location: Location,
                private userService: UserService,
                private router: Router,
+               private toastr: ToastrService,
                public translate: TranslateService) {
     this.user = new User();
 
@@ -30,6 +32,7 @@ export class SignupComponent implements OnInit {
   }
   onSubmit() {
     this.userService.signUp(this.user).subscribe(u => {
+        this.toastr.success('Signup Success', 'wellcome!!');
       this.router.navigate(['/login']);
     },
         e => {});

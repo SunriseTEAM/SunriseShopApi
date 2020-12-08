@@ -50,6 +50,14 @@ public class OrderController {
         return ResponseEntity.ok(orderService.cancel(orderId));
     }
 
+    @PatchMapping("/order/approved/{id}")
+    public ResponseEntity<OrderMain> approved(@PathVariable("id") Long orderId, Authentication authentication) {
+        if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_CUSTOMER"))) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        return ResponseEntity.ok(orderService.approved(orderId));
+    }
+
     @PatchMapping("/order/finish/{id}")
     public ResponseEntity<OrderMain> finish(@PathVariable("id") Long orderId, Authentication authentication) {
         if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_CUSTOMER"))) {

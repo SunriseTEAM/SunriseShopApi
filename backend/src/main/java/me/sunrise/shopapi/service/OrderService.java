@@ -18,6 +18,8 @@ public interface OrderService {
 
     OrderMain finish(Long orderId);
 
+    OrderMain approved(Long orderId);
+
     OrderMain cancel(Long orderId);
 
 }
