@@ -4,6 +4,7 @@ import {Subscription} from "rxjs";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Router} from "@angular/router";
 import {Role} from "../../enum/Role";
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-about',
@@ -40,6 +41,7 @@ export class AboutComponent implements OnInit, OnDestroy {
 
     constructor(private userService: UserService,
                 private router: Router,
+                public translate: TranslateService
     ) {
 
     }
@@ -66,5 +68,9 @@ export class AboutComponent implements OnInit, OnDestroy {
         this.userService.logout();
         // this.router.navigate(['/login'], {queryParams: {logout: 'true'}} );
     }
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
 
 }

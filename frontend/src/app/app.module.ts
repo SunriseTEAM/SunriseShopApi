@@ -42,6 +42,7 @@ import {TranslatePipe} from './pipes/translate.pipe';
 import {ToastrModule} from 'ngx-toastr';
 import {NgxSpinnerModule} from 'ngx-spinner';
 
+
 export function setupTranslateFactory(service: TranslateService) {
   return () => service.use("en");
 }
@@ -77,6 +78,7 @@ export function setupTranslateFactory(service: TranslateService) {
       ContactComponent,
       FooterComponent,
       TranslatePipe,
+
     ],
     imports: [
         BrowserModule,

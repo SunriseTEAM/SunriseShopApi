@@ -3,6 +3,7 @@ import {ProductInfo} from "../../models/productInfo";
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from 'ngx-toastr';
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-product-new',
@@ -16,7 +17,8 @@ export class ProductNewComponent implements OnInit, AfterContentChecked {
     constructor(private productService: ProductService,
                 private route: ActivatedRoute,
                 private toastr: ToastrService,
-                private router: Router) {
+                private router: Router,
+                public translate: TranslateService) {
     }
 
     productId: string;
@@ -74,5 +76,10 @@ export class ProductNewComponent implements OnInit, AfterContentChecked {
     ngAfterContentChecked(): void {
         console.log(this.product);
     }
+
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
 
 }

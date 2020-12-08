@@ -6,19 +6,18 @@
   <div class="container">
     <div class="agile_mail_grids">
       <div class="col-md-5 contact-left">
-        <h4>Address</h4>
-        <p><span>105 Phạm Như Xương, Hòa Khánh Nam, Liên Chiểu
-          Đà Nẵng</span></p>
+        <h4>{{ this.translate.data["CONTACTT"] | translate }}</h4>
+        <p><span>{{ this.translate.data["CONTACT1"] | translate }}</span></p>
 
         <ul>
-          <li>Free Phone :+1 078 4589 2456</li>
-          <li>Telephone :+1 078 4589 2456</li>
-          <li>Fax :+1 078 4589 2456</li>
-          <li><a href="mailto:sunriseshop2020@gmail.com">Email: sunriseshop2020@gmail.com</a></li>
+          <li>{{ this.translate.data["CONTACT2"] | translate }}</li>
+          <li>{{ this.translate.data["CONTACT3"] | translate }}</li>
+          <li>{{ this.translate.data["CONTACT4"] | translate }}</li>
+          <li><a href="mailto:sunriseshop2020@gmail.com">{{ this.translate.data["CONTACT5"] | translate }}</a></li>
         </ul>
       </div>
       <div class="col-md-7 contact-right">
-        <h4>Contact Form</h4>
+        <h4>{{ this.translate.data["CONTACT6"] | translate }}</h4>
         <form action="#" method="post">
           <input type="text" name="Name" placeholder="Your Name" required="">
           <input type="email" name="Email" placeholder="Your Email" required="">

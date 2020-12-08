@@ -9,17 +9,8 @@
 
       <div class="row" >
         <div class="col-md-3" style="border-right: 1px solid #dddddd;" >
-<!--          <div class="form-group">-->
-<!--            <label style="margin-left: 15px">By Category:</label>-->
-<!--            <select class="form-control" name=""[(ngModel)]="selectedBrand">-->
-<!--              <option value="All">Tất cả sản phẩm</option>-->
-<!--              <a (click)="getAllPRoduct(categoryList)" href="javascript:void(0)">{{categoryList}}</a>-->
-<!--              <option *ngFor="let category of categoryList" value="{{category.id}}">{{category.name}}</option>-->
-<!--            </select>-->
-<!--          </div>-->
-
           <!-- Section: Filters -->
-          <h6 class="font-weight-bold mb-3" style="margin-left: 15px">Search</h6>
+          <h6 class="font-weight-bold mb-3" style="margin-left: 15px">{{ this.translate.data["CATEGORY1"] | translate }}</h6>
           <section style="margin-left: 15px">
             <section class="mb-4">
               <div class="search-hero">
@@ -29,55 +20,31 @@
 
             </section>
 
-            <!-- Section: Condition -->
-            <h6 class="font-weight-bold mb-3" >Condition</h6>
-            <section class="mb-4" style="margin: 0 20px">
-
-              <div class="form-check pl-0 mb-3">
-                <input type="checkbox" class="form-check-input filled-in" id="new">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="new">New</label>
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input type="checkbox" class="form-check-input filled-in" id="used">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="used">Used</label>
-              </div>
-              <div class="form-check pl-0 mb-3">
-                <input type="checkbox" class="form-check-input filled-in" id="collectible">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="collectible">Collectible</label>
-              </div>
-              <div class="form-check pl-0 mb-3 pb-1">
-                <input type="checkbox" class="form-check-input filled-in" id="renewed">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="renewed">Renewed</label>
-              </div>
-
-            </section>
-            <!-- Section: Condition -->
-
 
 
             <!-- Section: Price -->
-            <h6 class="font-weight-bold mb-3">Price</h6>
+            <h6 class="font-weight-bold mb-3">{{ this.translate.data["CATEGORY7"] | translate }}</h6>
             <section class="mb-4" style="margin: 0 20px">
 
               <div class="form-check pl-0 mb-3">
                 <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under $25</label>
+                <label class="form-check-label small text-uppercase card-link-secondary" for="under25">{{ this.translate.data["CATEGORY8"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
                 <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="2550">$25 to $50</label>
+                <label class="form-check-label small text-uppercase card-link-secondary" for="2550">{{ this.translate.data["CATEGORY9"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
                 <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="50100">$50 to $100</label>
+                <label class="form-check-label small text-uppercase card-link-secondary" for="50100">{{ this.translate.data["CATEGORY10"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
                 <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="100200">$100 to $200</label>
+                <label class="form-check-label small text-uppercase card-link-secondary" for="100200">{{ this.translate.data["CATEGORY11"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
                 <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
-                <label class="form-check-label small text-uppercase card-link-secondary" for="200above">$200 & Above</label>
+                <label class="form-check-label small text-uppercase card-link-secondary" for="200above">{{ this.translate.data["CATEGORY12"] | translate }}</label>
               </div>
 
             </section>
@@ -111,7 +78,7 @@
                       <div class="card-body text-center no-padding" style="color: #ff7315">
                         <h5>
                           <strong>
-                            <a [routerLink]="['/products/product', productInfo.productId]">{{productInfo.productName}}</a>
+                            <a [routerLink]="['/category', productInfo.productId]">{{productInfo.productName}}</a>
                           </strong>
                         </h5>
                         <!--Card footer-->

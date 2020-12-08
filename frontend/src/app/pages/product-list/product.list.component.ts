@@ -10,6 +10,7 @@ import {ProductInfo} from "../../models/productInfo";
 import {Role} from "../../enum/Role";
 import {Category} from '../../models/Category';
 import {ProductInOrder} from '../../models/ProductInOrder';
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-product.list',
@@ -21,7 +22,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
     constructor(private userService: UserService,
                 private productService: ProductService,
                 private route: ActivatedRoute,
-                private router: Router
+                private router: Router,
+                public translate: TranslateService
     ) {
     }
 
@@ -55,7 +57,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
 
 
-    getProds(page: number = 1, size: number = 5) {
+    getProds(page: number = 1, size: number = 10) {
         this.productService.getAllInPage(+page, +size)
             .subscribe(page => {
                 this.page = page;
@@ -74,5 +76,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
         },
         error => console.log(error));
 
+  }
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
   }
 }

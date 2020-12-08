@@ -11,8 +11,8 @@
         <!--Photo-->
         <div class="form-group">
             <label>Photo Link</label>
-            <input  type="text" class="form-control form-control-lg" id="productIcon"
-                   name="productIcon" placeholder="Photo">
+          <input [(ngModel)]="product.productIcon" type="text" class="form-control form-control-lg" id="productIcon"
+                 name="productIcon" placeholder="Photo">
         </div>
 
         <!--Name-->
@@ -28,10 +28,27 @@
             <select class="custom-select custom-select-lg " id="categoryType" name="categoryType"
                     [(ngModel)]="product.categoryType"
                     required>
-              <option [ngValue]=0>Women</option>
-              <option [ngValue]=1>Men</option>
-              <option [ngValue]=2>Shose</option>
-              <option [ngValue]=3>Accessories</option>
+              <option [ngValue]=0>Shirt Women</option>
+              <option [ngValue]=1>Suit Women</option>
+              <option [ngValue]=2>T-shirt Women</option>
+              <option [ngValue]=3>Skirt</option>
+              <option [ngValue]=4>Jacket Women</option>
+              <option [ngValue]=5>Cap Women</option>
+              <option [ngValue]=6>Belt Women</option>
+              <option [ngValue]=7>Hand Bag Women</option>
+              <option [ngValue]=8>Glasses Women</option>
+              <option [ngValue]=9>Women's Watches</option>
+              <option [ngValue]=10>Sport Shoes</option>
+              <option [ngValue]=11>Shirt Men</option>
+              <option [ngValue]=12>T-shirt Men</option>
+              <option [ngValue]=13>Suit Men</option>
+              <option [ngValue]=14>Jacket Men</option>
+              <option [ngValue]=15>Cap Men</option>
+              <option [ngValue]=16>Belt Men</option>
+              <option [ngValue]=17>Hand Bag Men</option>
+              <option [ngValue]=18>Glasses Men</option>
+              <option [ngValue]=19>Men's Watches</option>
+              <option [ngValue]=20>Leather shoes</option>
             </select>
         </div>
 
@@ -50,7 +67,7 @@
       </div>
         <!--Stock-->
       <div class="form-group">
-        <label for="stock">stock:</label>
+        <label for="stock">Stock:</label>
         <input type="text" class="form-control" placeholder="Enter stock"
                id="stock" required [(ngModel)]="product.productStock" name="stock">
       </div>

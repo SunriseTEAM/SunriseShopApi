@@ -3,6 +3,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ProductService} from '../../services/product.service';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from "rxjs";
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
   selector: 'app-card',
@@ -22,7 +23,9 @@ export class CardComponent implements OnInit, OnDestroy {
 
 
   constructor(private productService: ProductService,
-              private route: ActivatedRoute,) {}
+              private route: ActivatedRoute,
+              public translate: TranslateService
+              ) {}
 
   ngOnInit() {
     this.querySub = this.route.queryParams.subscribe(() => {
@@ -48,7 +51,7 @@ export class CardComponent implements OnInit, OnDestroy {
       this.getProds();
     }
   }
-  getProds(page: number = 1, size: number = 8) {
+  getProds(page: number = 1, size: number = 12) {
     if (this.route.snapshot.url.length == 1) {
       this.productService.getAllInPage(+page, +size)
         .subscribe(page => {
@@ -63,6 +66,10 @@ export class CardComponent implements OnInit, OnDestroy {
           this.page = categoryPage.page;
         });
     }
+  }
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
   }
 
 }

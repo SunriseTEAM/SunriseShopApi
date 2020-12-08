@@ -2,6 +2,7 @@ import {AfterContentChecked, Component, OnInit} from '@angular/core';
 import {ProductInfo} from "../../models/productInfo";
 import {ProductService} from "../../services/product.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-product-edit',
@@ -14,7 +15,8 @@ export class ProductEditComponent implements OnInit, AfterContentChecked {
 
     constructor(private productService: ProductService,
                 private route: ActivatedRoute,
-                private router: Router) {
+                private router: Router,
+                public translate: TranslateService) {
     }
 
     productId: string;
@@ -61,4 +63,9 @@ export class ProductEditComponent implements OnInit, AfterContentChecked {
     ngAfterContentChecked(): void {
         console.log(this.product);
     }
+
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
 }

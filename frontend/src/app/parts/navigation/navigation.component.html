@@ -14,74 +14,85 @@
 
 
         <li class="nav-item dropdown has-mega-menu" style="position:static;">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["MENCLOTHING"] | translate }}</a>
+          <a *ngIf="!currentUser || currentUser.role == Role.Customer"
+            class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/category" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["MENCLOTHING"] | translate }}</a>
           <div class="dropdown-content" style="width:80%;  left: 140px">
             <div class="px-0 container">
               <div class="row">
                 <div class="col-md-3">
                   <br/>
-                  <a class="nav-item nav-link" routerLink="/category/0">
-                    {{ this.translate.data["WOMEN"] | translate }}
+                  <a class="nav-item nav-link" routerLink="/category/11">
+                    {{ this.translate.data["Shirt Men"] | translate }}
                   </a >
-                  <a  class="nav-item nav-link" routerLink="/category/1">
-                    {{ this.translate.data["MEN"] | translate }}
+                  <a class="nav-item nav-link" routerLink="/category/12">
+                    {{ this.translate.data["T-shirt Men"] | translate }}
+                  </a >
+                  <a  class="nav-item nav-link" routerLink="/category/13">
+                    {{ this.translate.data["Suit Men"] | translate }}
                   </a>
-                  <a  class="nav-item nav-link" routerLink="/category/2">
-                    {{ this.translate.data["SHOES"] | translate }}
+                  <a  class="nav-item nav-link" routerLink="/category/14">
+                    {{ this.translate.data["Jacket Men"] | translate }}
                   </a>
-                  <a  class="nav-item nav-link" routerLink="/category/3">
-                    {{ this.translate.data["ACCESSORIES"] | translate }}
+                  <a  class="nav-item nav-link" routerLink="/category/15">
+                    {{ this.translate.data["Cap Men"] | translate }}
                   </a>
                 </div>
                 <div class="col-md-3">
                   <br/>
-                  <a class="dropdown-item" href="men.html">T-Shirts</a>
-                  <a class="dropdown-item" href="men.html">Trousers</a>
-                  <a class="dropdown-item" href="men.html">Shirts</a>
-                  <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                  <a class="dropdown-item" href="men.html">Coats & Jackets</a>
+                  <a class="nav-item nav-link" routerLink="/category/16">{{ this.translate.data["Belt Men"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/17">{{ this.translate.data["Hand Bag Men"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/18">{{ this.translate.data["Glasses Men"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/19">{{ this.translate.data["Men's Watches"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/20">{{ this.translate.data["Leather shoes"] | translate }}</a>
                 </div>
 
-                <div class="col-md-4">
-
-                  <img src="../../../assets/images/e8.jpg" height="300" width="550"/>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown has-mega-menu" style="position:static;">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["WOMENCLOTHING"] | translate }}</a>
-          <div class="dropdown-content" style="width:80%;  left: 140px">
-            <div class="px-0 container">
-              <div class="row">
                 <div class="col-md-4">
 
                   <img src="../../../assets/images/e10.jpg" height="300" width="550"/>
                 </div>
-                <div class="col-md-3" style="left: 180px">
-                  <br/>
-                  <a class="nav-item nav-link" routerLink="/category/0">
-                    {{ this.translate.data["WOMEN"] | translate }}
-                  </a >
-                  <a  class="nav-item nav-link" routerLink="/category/1">
-                    {{ this.translate.data["MEN"] | translate }}
-                  </a>
-                  <a  class="nav-item nav-link" routerLink="/category/2">
-                    {{ this.translate.data["SHOES"] | translate }}
-                  </a>
-                  <a  class="nav-item nav-link" routerLink="/category/3">
-                    {{ this.translate.data["ACCESSORIES"] | translate }}
-                  </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown has-mega-menu" style="position:static;">
+          <a *ngIf="!currentUser || currentUser.role == Role.Customer"
+            class="nav-link dropdown-toggle" data-toggle="dropdown" routerLink="/category" yrole="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["WOMENCLOTHING"] | translate }}</a>
+          <div class="dropdown-content" style="width:80%;  left: 140px">
+            <div class="px-0 container">
+              <div class="row">
+                <div class="col-md-4">
+
+                  <img src="../../../assets/images/e8.jpg" height="300" width="550"/>
                 </div>
                 <div class="col-md-3" style="left: 180px">
                   <br/>
-                  <a class="dropdown-item" href="men.html">T-Shirts</a>
-                  <a class="dropdown-item" href="men.html">Trousers</a>
-                  <a class="dropdown-item" href="men.html">Shirts</a>
-                  <a class="dropdown-item" href="men.html">Suits & Blazers</a>
-                  <a class="dropdown-item" href="men.html">Coats & Jackets</a>
+                  <a class="nav-item nav-link" routerLink="/category/0">
+                    {{ this.translate.data["Shirt Women"] | translate }}
+                  </a >
+                  <a class="nav-item nav-link" routerLink="/category/1">
+                    {{ this.translate.data["Suit Women"] | translate }}
+                  </a >
+                  <a class="nav-item nav-link" routerLink="/category/2">
+                    {{ this.translate.data["T-shirt Women"] | translate }}
+                  </a >
+                  <a  class="nav-item nav-link" routerLink="/category/3">
+                    {{ this.translate.data["Skirt"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/category/4">
+                    {{ this.translate.data["Jacket Women"] | translate }}
+                  </a>
+                  <a  class="nav-item nav-link" routerLink="/category/5">
+                    {{ this.translate.data["Cap Women"] | translate }}
+                  </a>
+                </div>
+                <div class="col-md-4" style="left: 150px">
+                  <br/>
+                  <a class="nav-item nav-link" routerLink="/category/6">{{ this.translate.data["Belt Women"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/7">{{ this.translate.data["Hand Bag Women"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/8">{{ this.translate.data["Glasses Women"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/9">{{ this.translate.data["Women's Watches"] | translate }}</a>
+                  <a class="nav-item nav-link" routerLink="/category/10">{{ this.translate.data["Sport Shoes"] | translate }}</a>
                 </div>
 
 
@@ -91,14 +102,15 @@
         </li>
 
         <li class="nav-item dropdown has-mega-menu" style="position:static;">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["INFOMATION"] | translate }}</a>
+          <a *ngIf="!currentUser || currentUser.role == Role.Customer"
+            class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ this.translate.data["INFOMATION"] | translate }}</a>
           <div class="dropdown-content" style="width:82%;  left: 115px">
             <div class="px-0 container">
               <div class="row">
 
                 <div class="col-md-4">
 
-                  <img src="../../../assets/images/e10.jpg" height="300" width="550"/>
+                  <img src="../../../assets/images/e19.jpg" height="300" width="550"/>
                 </div>
                 <div class="col-md-3"style="left: 200px" >
                   <br/>
@@ -113,7 +125,7 @@
                 <div class="col-md-4" style="left: 80px;">
                   <br/>
                   <a  class="nav-item nav-link" routerLink="/size">
-                    {{ this.translate.data["SIZE"] | translate }}
+                    {{ this.translate.data["SIZE1"] | translate }}
                   </a >
                   <a   class="nav-item nav-link" routerLink="/return">
                     {{ this.translate.data["RETURN POLICY"] | translate }}
@@ -138,7 +150,7 @@
 
         <li class="dropdown">
           <a class="nav-item nav-link" ><i class="fa fa-globe"></i>
-            {{ this.translate.data["LANGUAGE"] | translate }}</a>
+            </a>
           <div class="dropdown-langugue" >
             <a  class="nav-item nav-link"
                 href="javascript:;;" (click)="setLang(lang.langCode)"
@@ -151,7 +163,7 @@
         <li ><a *ngIf="!currentUser || currentUser.role == Role.Customer"
           class="nav-item nav-link " routerLink="/cart">
           <i class="fas fa-shopping-cart"></i>
-          {{ this.translate.data["Cart"] | translate }}
+
         </a></li>
         <ng-container *ngIf="currentUser; else noUser">
           <li><a *ngIf="currentUser.role != Role.Customer" class="nav-item nav-link " routerLink="/categoryList">

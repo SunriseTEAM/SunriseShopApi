@@ -3,6 +3,7 @@ import {UserService} from "../../services/user.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Role} from "../../enum/Role";
 import {ToastrService} from 'ngx-toastr';
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-login',
@@ -25,7 +26,8 @@ export class LoginComponent implements OnInit {
     constructor(private userService: UserService,
                 private router: Router,
                 private toastr: ToastrService,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                public translate: TranslateService) {
     }
 
     ngOnInit() {
@@ -59,4 +61,9 @@ export class LoginComponent implements OnInit {
         this.model.password = p;
         this.onSubmit();
     }
+
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
 }

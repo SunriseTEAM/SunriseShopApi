@@ -60,32 +60,46 @@
     <!--/.Controls-->
   </div>
 
-  <div class="gallery lobster-font-family" id="blog">
-    <div class="container">
-      <h3 class="text-calitalize text-center">{{ this.translate.data["CATEGORY"] | translate }}</h3>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="pic-one"><h4>Hand Bag</h4></div>
-          <div class="pic-two"><h4>High Heels</h4></div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="pic-three active"><h4>Clothes</h4></div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="pic-four"><h4>Women's Watches</h4></div>
-          <div class="pic-five"><h4>Sport Shoes</h4></div>
+
+<div class="about lobster-font-family">
+  <div class="container">
+    <h2 class="text-center text-capitalize" style="color: #ff7315; font-family: 'Times New Roman'">{{ this.translate.data["SLIDE1"] | translate }}</h2>
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        <h4 style=" font-family: 'Times New Roman';margin-left: -80px;">{{ this.translate.data["SLIDE2"] | translate }}</h4>
+        <p style=" font-family: 'Times New Roman';font-size: 18px;;margin-left: -80px;">{{ this.translate.data["SLIDE3"] | translate }}</p>
+        <button style="margin-left: -70px;"><a href="#">{{ this.translate.data["SLIDE4"] | translate }}</a></button>
+      </div>
+      <div class="col-lg-6 col-12">
+        <div class="img"></div>
+      </div>
+    </div>
+    <h2 class="text-capitalize" id="room" style="color: #ff7315; font-family: 'Times New Roman'">{{ this.translate.data["SLIDE5"] | translate }}</h2>
+    <div class="row">
+      <div class="col-lg-4 col-12">
+        <div class="img"></div>
+      </div>
+      <div class="col-lg-8 col-12">
+        <div class="block" >
+          <div>
+            <img src="imgs/shape.png">
+            <strong style="margin-left: 250px">$405</strong>
+            <h5 style="margin-left: 250px; font-family: 'Times New Roman'">{{ this.translate.data["SLIDE6"] | translate }}</h5>
+            <p style="width: 770px; font-family: 'Times New Roman';font-size: 18px;">{{ this.translate.data["SLIDE7"] | translate }}</p>
+            <button style="margin-left: 230px"><a href="#" class="text-capitalize">{{ this.translate.data["SLIDE4"] | translate }}</a></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <br />
+</div>
 <div class="home">
   <div class="small-container">
 
     <div class="row">
       <div class="col-lg-4 col-12 lobster-font-family d-flex align-items-center">
-        <h2>It is a long established fact that a reader will be distracted by the readablen</h2>
-        <button><a href="#">Show now</a></button>
+        <h2>{{ this.translate.data["SLIDE8"] | translate }}</h2>
+        <button><a href="#">{{ this.translate.data["SLIDE9"] | translate }}</a></button>
       </div>
     </div>
     <div class="h-slider roboto-font-family welcome d-flex align-items-center justify-content-center">
@@ -110,41 +124,9 @@
   <div class="rd-rec"></div>
 </div>
 
-<div class="about lobster-font-family">
-  <div class="container">
-    <h2 class="text-center text-capitalize" style="color: #ff7315">Glittered Knuckle-Ring Clutch</h2>
-    <div class="row">
-      <div class="col-lg-6 col-12">
-        <h4>A best place to enjoy your life</h4>
-        <p>Amp up the sparkle at your next festive party with this silver clutch. Crafted in a glittery finish that captures the essence of the Christmas season, hold all your absolute essentials securely in style with the magnetic closure. Complete with a unique knuckle-ring design that lets you hold the clutch comfortably, gear up for your next soiree by matching it with tailored trousers and a ruffled off-shoulder top. </p>
-        <button><a href="#">Read more</a></button>
-      </div>
-      <div class="col-lg-6 col-12">
-        <div class="img"></div>
-      </div>
-    </div>
-    <h2 class="text-capitalize" id="room" style="color: #ff7315">Rolex watch</h2>
-    <div class="row">
-      <div class="col-lg-4 col-12">
-        <div class="img"></div>
-      </div>
-      <div class="col-lg-8 col-12">
-        <div class="block" >
-          <div>
-            <img src="imgs/shape.png">
-            <strong style="margin-left: 250px">$405</strong>
-            <h5 style="margin-left: 250px">Oyster Perpetual Sky-Dweller</h5>
-            <p style="width: 770px">Rolex presents the new Oyster Perpetual Sky-Dweller in 18 ct yellow gold, fitted with an Oysterflex bracelet. This is the first watch in the Classic category with an innovative strap. At the same time, it incorporates a black sun-ray motif dial with 18 ct gold hands and hour markers. Light reflected from the side and lugs accentuate the elegant configuration of the 42 mm Oyster case.</p>
-            <button style="margin-left: 230px"><a href="#" class="text-capitalize">Read more</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="poster">-->
 
-<div class="poster">
-
-</div>
+<!--</div>-->
+<br/><br/><br/><br/>
 <app-footer></app-footer>
 
