@@ -1,8 +1,10 @@
 package me.sunrise.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.NaturalId;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,9 +24,9 @@ public class ProductCategory implements Serializable {
 
 //    @NaturalId
     private Integer categoryType;
-
+    @CreationTimestamp
     private Date createTime;
-
+    @UpdateTimestamp
     private Date updateTime;
 
 

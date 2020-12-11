@@ -36,8 +36,7 @@ public class User implements Serializable {
     private boolean active;
     @NotEmpty
     private String role = "ROLE_CUSTOMER";
-    @NotEmpty
-    private String resetPasswordToken;
+
 
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

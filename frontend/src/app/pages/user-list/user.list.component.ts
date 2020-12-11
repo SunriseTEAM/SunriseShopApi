@@ -3,7 +3,7 @@ import {UserService} from "../../services/user.service";
 import {ProductService} from "../../services/product.service";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryType} from "../../enum/CategoryType";
 import {ProductStatus} from "../../enum/ProductStatus";
 import {ProductInfo} from "../../models/productInfo";
@@ -11,6 +11,7 @@ import {Role} from "../../enum/Role";
 import {Category} from '../../models/Category';
 import {ProductInOrder} from '../../models/ProductInOrder';
 import {User} from '../../models/User';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-product.list',
@@ -20,6 +21,8 @@ import {User} from '../../models/User';
 export class UserListComponent implements OnInit, OnDestroy {
 
     constructor(private userService: UserService,
+                private router: Router,
+                private toastr: ToastrService,
                 private route: ActivatedRoute) {
     }
 
@@ -65,10 +68,9 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.userService.delete(id)
       .subscribe(
         data => {
-          window.alert('xóa thành công!')
           console.log(data);
-          location.reload()
-
+          this.router.navigate(['/userList']);
+          this.toastr.success('Delete User Success!', 'Reset!');
         },
         error => console.log(error));
 

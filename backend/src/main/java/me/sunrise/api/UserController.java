@@ -3,6 +3,7 @@ package me.sunrise.api;
 import me.sunrise.entity.User;
 import me.sunrise.security.JWT.JwtProvider;
 import me.sunrise.service.UserService;
+import me.sunrise.service.impl.UserServiceImpl;
 import me.sunrise.vo.request.LoginForm;
 import me.sunrise.vo.response.JwtResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.security.Principal;
 
 @CrossOrigin
@@ -27,6 +30,8 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    UserServiceImpl userServiceImpl;
 
     @Autowired
     JwtProvider jwtProvider;
@@ -79,7 +84,6 @@ public class UserController {
         } else {
             return ResponseEntity.badRequest().build();
         }
-
     }
 
     @GetMapping("/userList")

@@ -21,9 +21,9 @@
         <td class="align-middle">{{user.phone}}</td>
         <td class="align-middle">{{user.address}}</td>
         <td class="align-middle">{{user.password}}</td>
-        <td class="align-middle">{{Role[user.role]}}</td>
+        <td class="align-middle">{{user.role}}</td>
         <td class="align-middle">
-            <a style="display: block" routerLink="/user/{{user.id}}/edit">
+            <a style="display: block" routerLink="/user/edit/{{user.email}}">
                 Edit</a>
           <a style="display: block" routerLink="/user/new">
             New</a>
@@ -31,9 +31,9 @@
              (click)='deleteUser(user.id)' routerLink="./">
             Remove</a>
 
-            <a *ngIf="currentUser?.role == Role.Customer" style="display: block"
-               (click)='deleteUser(user.id)' routerLink="./">
-                Remove</a>
+<!--            <a *ngIf="currentUser?.role == Role.Customer" style="display: block"-->
+<!--               (click)='deleteUser(user.id)' routerLink="./">-->
+<!--                Remove</a>-->
         </td>
 
     </tbody>

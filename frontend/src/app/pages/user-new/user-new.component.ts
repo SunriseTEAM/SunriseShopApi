@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {Observable, Subject} from "rxjs";
 import {Role} from "../../enum/Role";
 import {Location} from '@angular/common';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'app-user-new',
@@ -17,6 +18,7 @@ export class UserNewComponent implements OnInit {
 
   constructor( private location: Location,
                private userService: UserService,
+               private toastr: ToastrService,
                private router: Router) {
     this.user = new User();
   }
@@ -25,6 +27,9 @@ export class UserNewComponent implements OnInit {
 
   onSubmit() {
     this.userService.signUp(this.user).subscribe(u => {
+        console.log(u);
+        this.router.navigate(['/userList']);
+        this.toastr.success('Add User Success!', 'Reset!');
       },
       e => {});
   }
