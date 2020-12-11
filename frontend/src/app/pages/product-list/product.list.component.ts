@@ -71,7 +71,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
       .subscribe(
         data => {
           console.log(data);
-          this.router.navigate(['/seller']);
+          this.router.navigate(['/productList']);
           window.alert('xóa thành công!')
         },
         error => console.log(error));

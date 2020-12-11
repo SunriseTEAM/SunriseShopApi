@@ -14,6 +14,7 @@ export class CategoryService {
 
     private categoryUrl = `${apiUrl}/categoryList`;
   private baseurl = 'http://localhost:8080/api/delete/category';
+  private baseurl1 = 'http://localhost:8080/api/categoryy';
 
     constructor(private http: HttpClient) {
     }
@@ -38,4 +39,15 @@ export class CategoryService {
   createProduct1(category: Category): Observable<any> {
     return this.http.post<any>(`${apiUrl}/seller/category/new`, category);
   }
+
+  getDetailcategoy(id: string): Observable<Category> {
+    const url = `${this.baseurl1}/${id}`;
+    return this.http.get<Category>(url).pipe(
+      catchError(_ => {
+        console.log("Get Detail Failed");
+        return of(new Category());
+      })
+    );
+  }
+
 }

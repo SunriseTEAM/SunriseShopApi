@@ -61,9 +61,10 @@ export class CategoryNewComponent implements OnInit, AfterContentChecked {
   save() {
     this.categoryService.createProduct1(this.category)
       .subscribe(data => {
-        window.alert('Thêm mới thành công!')
+
         console.log(data);
-        this.router.navigate(['/seller']);
+        window.alert('Thêm mới thành công!')
+        this.router.navigate(['/categoryList']);
       }, error => {
         console.log(error);
       });

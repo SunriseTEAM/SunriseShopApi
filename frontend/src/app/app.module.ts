@@ -43,6 +43,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {NgxSpinnerModule} from 'ngx-spinner';
 
 
+
 export function setupTranslateFactory(service: TranslateService) {
   return () => service.use("en");
 }
@@ -89,6 +90,9 @@ export function setupTranslateFactory(service: TranslateService) {
         Ng2SearchPipeModule,
         NgxSpinnerModule,
       ToastrModule.forRoot(),
+
+      Ng2SearchPipeModule
+
     ],
     providers: [CookieService,TranslateService,
       {provide: APP_INITIALIZER, useFactory: setupTranslateFactory, deps: [TranslateService], multi: true,},

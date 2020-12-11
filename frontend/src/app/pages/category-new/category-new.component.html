@@ -17,17 +17,11 @@
       </div>
 
         <!--Category-->
-        <div class="form-group">
-            <label for="categoryType">Category</label>
-            <select class="custom-select custom-select-lg " id="categoryType" name="categoryType"
-                    [(ngModel)]="category.categoryType"
-                    required>
-                <option [ngValue]=0>0</option>
-                <option [ngValue]=1>1</option>
-                <option [ngValue]=2>2</option>
-                <option [ngValue]=3>3</option>
-            </select>
-        </div>
+      <div class="form-group">
+        <label for="categoryType">CategoryType:</label>
+        <input type="text" class="form-control" placeholder="Enter Type"
+               id="categoryType" required [(ngModel)]="category.categoryType" name="name">
+      </div>
 
         <div class="form-group">
             <button type="submit"(click)="save()" class="btn btn-lg btn-primary btn-block">Submit</button>

@@ -6,7 +6,7 @@ import {OrderStatus} from "../../enum/OrderStatus";
 import {UserService} from "../../services/user.service";
 import {JwtResponse} from "../../response/JwtResponse";
 import {Subscription} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from "../../enum/Role";
 import {Category} from '../../models/Category';
 import {CategoryService} from '../../services/category.service';
@@ -26,7 +26,8 @@ export class CategoryComponent implements OnInit, OnDestroy {
     constructor(private httpClient: HttpClient,
                 private categoryService: CategoryService,
                 private userService: UserService,
-                private route: ActivatedRoute
+                private route: ActivatedRoute,
+                private router: Router
     ) {
     }
 
@@ -56,9 +57,11 @@ export class CategoryComponent implements OnInit, OnDestroy {
     this.categoryService.deleteProduct1(categoryId)
       .subscribe(
         data => {
-          window.alert('xóa thành công!')
           console.log(data);
-          location.reload()
+          window.alert('xóa thành công!')
+          this.router.navigate(['/categoryList']);
+
+
 
         },
         error => console.log(error));

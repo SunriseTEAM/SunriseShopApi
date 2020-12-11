@@ -22,6 +22,7 @@ export class CardComponent implements OnInit, OnDestroy {
   searchText
 
 
+
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
               public translate: TranslateService

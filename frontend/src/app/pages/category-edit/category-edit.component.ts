@@ -26,14 +26,15 @@ export class CategoryEditComponent implements OnInit, AfterContentChecked {
         this.categoryId = this.route.snapshot.paramMap.get('id');
         if (this.categoryId) {
             this.isEdit = true;
+          this.categoryService.getDetailcategoy(this.categoryId).subscribe(data => this.category = data);
         }
-
     }
 
     update() {
         this.categoryService.update(this.category).subscribe(prod => {
                 if (!prod) throw new Error();
-                this.router.navigate(['/seller']);
+                this.router.navigate(['/categoryList']);
+            window.alert('Cập nhật thành công!')
             },
             err => {
             });
@@ -44,7 +45,7 @@ export class CategoryEditComponent implements OnInit, AfterContentChecked {
         if (this.categoryId) {
             this.update();
         } else {
-            this.add();
+            // this.add();
         }
     }
 
