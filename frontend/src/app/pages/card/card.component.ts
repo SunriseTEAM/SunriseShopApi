@@ -19,6 +19,7 @@ export class CardComponent implements OnInit, OnDestroy {
   selectedBrand="All";
   status ="all";
   productsList: any;
+  productStatus = "getAllproduct";
   searchText
 
 
@@ -72,5 +73,13 @@ export class CardComponent implements OnInit, OnDestroy {
     // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
   }
-
+ShowProduct(productPrice: number) {
+    const getAll = this.productStatus === 'getAllproduct';
+    const getunder25 = this.productStatus === 'under25' && 25 >= productPrice;
+    const get25To50 = this.productStatus === '2550' &&  50 > productPrice && productPrice >= 25;
+    const get50To100 = this.productStatus === '50100' &&  100 > productPrice && productPrice >= 50;
+    const get100To200 = this.productStatus === '100200' &&  200 > productPrice && productPrice >= 100;
+    const get200above = this.productStatus === '200above' && productPrice >= 200;
+    return getAll || getunder25 || get25To50 || get50To100 || get100To200 || get200above ;
+  }
 }
