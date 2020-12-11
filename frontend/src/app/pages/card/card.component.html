@@ -26,24 +26,29 @@
             <h6 class="font-weight-bold mb-3">{{ this.translate.data["CATEGORY7"] | translate }}</h6>
             <section class="mb-4" style="margin: 0 20px">
 
+             <div class="form-check pl-0 mb-3">
+                <input [(ngModel)]="productStatus" type="radio" class="form-check-input" id="getAllproduct" value="getAllproduct" name="materialExampleRadios">
+                <label class="form-check-label small text-uppercase card-link-secondary" for="getAllproduct">Xem tất cả</label>
+              </div>
+
               <div class="form-check pl-0 mb-3">
-                <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
+                <input [(ngModel)]="productStatus" type="radio" class="form-check-input" id="under25" value="under25" name="materialExampleRadios">
                 <label class="form-check-label small text-uppercase card-link-secondary" for="under25">{{ this.translate.data["CATEGORY8"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
-                <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
+                <input [(ngModel)]="productStatus" type="radio" class="form-check-input" id="2550" value="2550" name="materialExampleRadios">
                 <label class="form-check-label small text-uppercase card-link-secondary" for="2550">{{ this.translate.data["CATEGORY9"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
-                <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
+                <input [(ngModel)]="productStatus" type="radio" class="form-check-input" id="50100" value="50100" name="materialExampleRadios">
                 <label class="form-check-label small text-uppercase card-link-secondary" for="50100">{{ this.translate.data["CATEGORY10"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
-                <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
+                <input [(ngModel)]="productStatus" type="radio" class="form-check-input" id="100200" value="100200" name="materialExampleRadios">
                 <label class="form-check-label small text-uppercase card-link-secondary" for="100200">{{ this.translate.data["CATEGORY11"] | translate }}</label>
               </div>
               <div class="form-check pl-0 mb-3">
-                <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
+                <input [(ngModel)]="productStatus" type="radio" class="form-check-input" value="200above" id="200above" name="materialExampleRadios">
                 <label class="form-check-label small text-uppercase card-link-secondary" for="200above">{{ this.translate.data["CATEGORY12"] | translate }}</label>
               </div>
 
@@ -60,6 +65,7 @@
             <div class="row" *ngIf="!loading">
               <!-- List of Products -->
               <div class="col-sm-3 mb-2" *ngFor="let productInfo of page?.content | filter:searchText ">
+               <div *ngIf="ShowProduct(productInfo.productPrice)">
                 <div class="item">
                   <div class="mb-r">
                     <!--Card-->
@@ -105,6 +111,7 @@
                     </div>
                     <!--/.Card-->
                   </div>
+                </div>
                 </div>
               </div>
 
