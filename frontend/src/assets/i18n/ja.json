@@ -23,6 +23,8 @@
   "VIEWALL": "続きを見る",
   "Login": "ログインする",
   "Sign up": "サインアップ",
+  "Sign Out": "ログアウト",
+  "Orders": "ご注文",
   "Cart": "カート",
   "CATEGORY": "カテゴリー",
 
@@ -109,6 +111,33 @@
   "CATEGORY10": "$50 次 $100",
   "CATEGORY11": "$100 次 $200",
   "CATEGORY12": "$200 - 上",
+
+
+  "Product Detail": "製品詳細",
+  "Price": "価格",
+  "Stock": "倉庫",
+  "Quantity": "量",
+  "Description": "製品説明:",
+  "Status": "状態",
+  "Subtotal": "小計",
+  "Add to Cart": "カートに追加",
+  "Unavailable": "利用できません",
+
+
+
+  "My Cart": "私のカート",
+  "Photo": "写真",
+  "Name": "名前",
+  "Pricee": "価格",
+  "Quantityy": "量",
+  "Subtotall": "小計",
+  "Action": "アクション",
+  "Remove": "削除する",
+  "Total": "合計",
+  "Checkout": "チェックアウト",
+  "Cart is empty. Go to get something!": "あなたのカートは空です。 今すぐ買い物！",
+
+
 
 
   "ABOUT1": "サンライズショップのご紹介",

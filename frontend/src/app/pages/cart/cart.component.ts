@@ -8,6 +8,7 @@ import {debounceTime, switchMap} from 'rxjs/operators';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from '../../enum/Role';
 import {ToastrService} from 'ngx-toastr';
+import {TranslateService} from '../../services/translate.service';
 
 @Component({
     selector: 'app-cart',
@@ -19,7 +20,9 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     constructor(private cartService: CartService,
                 private userService: UserService,
                 private toastr: ToastrService,
-                private router: Router) {
+                private router: Router,
+                public translate: TranslateService
+    ) {
         this.userSubscription = this.userService.currentUser.subscribe(user => this.currentUser = user);
     }
 
@@ -120,5 +123,9 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
         }
 
     }
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
 }
 

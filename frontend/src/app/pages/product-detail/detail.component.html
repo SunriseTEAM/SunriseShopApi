@@ -1,5 +1,5 @@
 <br/><br/><br/><br/><br/>
-<h3 align="center" >{{title}}</h3><br/>
+<h3 align="center" >{{ this.translate.data["Product Detail"] | translate }}</h3><br/>
 <div class="container">
   <div class="card_detail">
     <div class="container-fliud">
@@ -15,13 +15,13 @@
             <input hidden name="productId" [value]=productInfo?.productId>
 
             <p class="card-text">
-              <strong>Price: </strong>
+              <strong>{{ this.translate.data["Price"] | translate }}: </strong>
               <label id="price">{{productInfo?.productPrice | currency}}</label>
             </p>
-            <p class="card-text"><strong>Stock: </strong>{{productInfo?.productStock}}</p>
+            <p class="card-text"><strong>{{ this.translate.data["Stock"] | translate }}: </strong>{{productInfo?.productStock}}</p>
 
             <label class="card-text">
-              <strong>Quantity: </strong>
+              <strong>{{ this.translate.data["Quantity"] | translate }}: </strong>
               <input [(ngModel)]=count
                      (change)="validateCount()"
                      type="number"
@@ -32,13 +32,17 @@
               >
             </label>
 
-            <p class="card-test"><strong>Description: </strong>{{productInfo?.productDescription}}</p>
+            <p class="card-test"><strong>{{ this.translate.data["Description"] | translate }}: </strong>{{productInfo?.productDescription}}</p>
+            <p class="card-test"><strong>{{ this.translate.data["Status"] | translate }}: </strong>{{ProductStatus[productInfo?.productStatus]}}</p>
+            <p class="card-text"><strong>{{ this.translate.data["Subtotal"] | translate }}: </strong>
+              <label id="subtotal">{{count * productInfo?.productPrice | currency}}</label>
+            </p>
           </div>
           <button type="submit" [disabled]="!form.form.valid" *ngIf="productInfo?.productStatus == 0; else offBlock"
                   class="btn btn-primary btn-lg"
-          >Add to Cart
+          >{{ this.translate.data["Add to Cart"] | translate }}
           </button>
-          <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
+          <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">{{ this.translate.data["Unavailable"] | translate }}</a></ng-template>
         </form>
 
       </div>

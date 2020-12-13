@@ -36,20 +36,8 @@
   "Your email": "Địa chỉ email",
   "Repassword": "Nhập lại password",
   "Sign up": "Đăng ký",
-  "Infomation": "Thông tin",
-  "Cart": "Giỏ hàng",
-  "CATEGORY": "LOẠI SẢN PHẨM",
-
-
-  "New User": "Bạn là người dùng mới",
-  "Register here": "Đăng ký ngay",
-  "Login": "Đăng nhập",
-  "Sign in with Google": "Đăng nhập với google",
-  "Your name": "Tên của bạn",
-  "Phone Number": "Số điện thoại",
-  "Your email": "Địa chỉ email",
-  "Repassword": "Nhập lại password",
-  "Sign up": "Đăng ký",
+  "Sign Out": "Đăng xuất",
+  "Orders": "Đơn hàng của bạn",
   "Infomation": "Thông tin",
   "Cart": "Giỏ hàng",
   "CATEGORY": "LOẠI SẢN PHẨM",
@@ -132,6 +120,31 @@
   "CATEGORY10": "$50 tới $100",
   "CATEGORY11": "$100 tới $200",
   "CATEGORY12": "$200 - Trở lên",
+
+
+  "Product Detail": "Chi tiết sản phẩm",
+  "Price": "Giá",
+  "Stock": "Kho",
+  "Quantity": "Số lượng",
+  "Description": "Mô tả sản phẩm:",
+  "Status": "Trạng thái",
+  "Subtotal": "Tạm tính",
+  "Add to Cart": "Thêm vào giỏ hàng",
+  "Unavailable": "Không có sẵn",
+
+
+
+  "My Cart": "Giỏ hàng của tôi",
+  "Photo": "Hình ảnh",
+  "Name": "Tên",
+  "Pricee": "Giá",
+  "Quantityy": "Số lượng",
+  "Subtotall": "Tạm tính",
+  "Action": "Hành động",
+  "Remove": "Xóa",
+  "Total": "Tổng tiền",
+  "Checkout": "Thanh toán",
+  "Cart is empty. Go to get something!": "Giỏ của bạn trống. Mua sắm ngay bây giờ!",
 
 
 

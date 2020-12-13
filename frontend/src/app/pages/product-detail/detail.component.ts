@@ -8,6 +8,8 @@ import {ProductInfo} from '../../models/productInfo';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/User';
 import {JwtResponse} from '../../response/JwtResponse';
+import {TranslateService} from '../../services/translate.service';
+import {ProductStatus} from '../../enum/ProductStatus';
 
 @Component({
   selector: 'app-detail',
@@ -18,6 +20,7 @@ export class DetailComponent implements OnInit {
   title: string;
   count: number;
   productInfo: ProductInfo;
+  ProductStatus = ProductStatus;
 
   constructor(
       private productService: ProductService,
@@ -25,7 +28,8 @@ export class DetailComponent implements OnInit {
       private cookieService: CookieService,
       private route: ActivatedRoute,
       private userService: UserService,
-      private router: Router
+      private router: Router,
+      public translate: TranslateService
   ) {
   }
 
@@ -77,6 +81,11 @@ export class DetailComponent implements OnInit {
     } else if (this.count < 1) {
       this.count = 1;
     }
+  }
+
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
   }
 
 }

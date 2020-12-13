@@ -32,6 +32,8 @@
   "Register here": "Register here",
   "Login": "Login",
   "Sign up": "Sign up",
+  "Sign Out": "Sign up",
+  "Orders": "Orders",
   "Sign in with Google": "Sign in with Google",
   "Your name": "Your name",
   "Phone Number": "Phone Number",
@@ -121,6 +123,33 @@
   "CATEGORY10": "$50 to $100",
   "CATEGORY11": "$100 to $200",
   "CATEGORY12": "$200 & Above",
+
+
+
+  "Product Detail": "Product Detail",
+  "Price": "Price",
+  "Stock": "Stock",
+  "Quantity": "Quantity",
+  "Description": "Description",
+  "Status": "Status",
+  "Subtotal": "Subtotal",
+  "Add to Cart": "Add to Cart",
+  "Unavailable": "Unavailable",
+
+
+
+
+  "My Cart": "My Cart",
+  "Photo": "Photo",
+  "Name": "Name",
+  "Pricee": "Pricee",
+  "Quantityy": "Quantityy",
+  "Subtotall": "Subtotall",
+  "Action": "Action",
+  "Remove": "Remove",
+  "Total": "Total",
+  "Checkout": "Checkout",
+  "Cart is empty. Go to get something!": "Your cart is empty. Shopping now!",
 
 
 
