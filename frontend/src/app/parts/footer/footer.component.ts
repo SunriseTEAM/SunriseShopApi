@@ -13,25 +13,6 @@ import {TranslateService} from '../../services/translate.service';
 })
 export class FooterComponent implements OnInit, OnDestroy {
 
-  carouselList = [
-    {
-      bannerImg: "../../../assets/images/bn4.jpg" ,
-      title: "WOMEN'S FASHION ",
-      description: "50% OFF",
-    },
-    {
-      bannerImg: "../../../assets/images/bn6.jpg",
-      title: "ALL BRANDED WOMEN'S BAGS ARE FLAT 30% DISCOUNT",
-      description:
-        " Visit our shop to see amazing creations from our designers",
-    },
-    {
-      bannerImg: "../../../assets/images/bn8.jpg",
-      title: "My fashion Wear",
-      description: "Twonderful designs has akenpossession of loremquis nostrum exercitation is simply dummy text ",
-    },
-  ];
-
     currentUserSubscription: Subscription;
     name$;
     name: string;
@@ -63,7 +44,10 @@ export class FooterComponent implements OnInit, OnDestroy {
         this.currentUserSubscription.unsubscribe();
         // this.name$.unsubscribe();
     }
-
+  setLang(lang: string) {
+    // console.log("Language", lang);
+    this.translate.use(lang).then(() => {});
+  }
     logout() {
         this.userService.logout();
         // this.router.navigate(['/login'], {queryParams: {logout: 'true'}} );

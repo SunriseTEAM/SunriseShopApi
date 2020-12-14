@@ -37,7 +37,7 @@
   "Repassword": "Nhập lại password",
   "Sign up": "Đăng ký",
   "Sign Out": "Đăng xuất",
-  "Orders": "Đơn hàng của bạn",
+  "Orders": "Đơn hàng",
   "Infomation": "Thông tin",
   "Cart": "Giỏ hàng",
   "CATEGORY": "LOẠI SẢN PHẨM",
@@ -145,6 +145,11 @@
   "Total": "Tổng tiền",
   "Checkout": "Thanh toán",
   "Cart is empty. Go to get something!": "Giỏ của bạn trống. Mua sắm ngay bây giờ!",
+  "Email": "Email",
+  "Phone": "Số điện thoại",
+  "Address": "Địa chỉ",
+  "Customer information": "Thông tin khách hàng",
+  "The total amount is": "Tổng tiền",
 
 
 

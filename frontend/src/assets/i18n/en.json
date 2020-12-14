@@ -142,14 +142,19 @@
   "My Cart": "My Cart",
   "Photo": "Photo",
   "Name": "Name",
-  "Pricee": "Pricee",
-  "Quantityy": "Quantityy",
-  "Subtotall": "Subtotall",
+  "Pricee": "Price",
+  "Quantityy": "Quantity",
+  "Subtotall": "Subtotal",
   "Action": "Action",
   "Remove": "Remove",
   "Total": "Total",
   "Checkout": "Checkout",
   "Cart is empty. Go to get something!": "Your cart is empty. Shopping now!",
+  "Email": "Email",
+  "Phone": "Phone",
+  "Address": "Address",
+  "Customer information": "Customer information",
+  "The total amount is": "The total amount is",
 
 
 
