@@ -44,6 +44,9 @@ import {NgxSpinnerModule} from 'ngx-spinner';
 import {ChartComponent} from './pages/chart/chart.component';
 import {ChartsModule} from 'ng2-charts';
 import {FavoriteComponent} from './pages/favorite/favorite.component';
+import {ImageZoomModule} from 'angular2-image-zoom';
+import {CarouselModule} from 'ngx-owl-carousel-o';
+
 
 
 
@@ -95,6 +98,9 @@ export function setupTranslateFactory(service: TranslateService) {
         Ng2SearchPipeModule,
         ChartsModule,
         NgxSpinnerModule,
+        ImageZoomModule,
+         CarouselModule,
+
       ToastrModule.forRoot(),
 
       Ng2SearchPipeModule

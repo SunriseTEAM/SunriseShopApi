@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from '../../enum/Role';
 import {ToastrService} from 'ngx-toastr';
 import {TranslateService} from '../../services/translate.service';
+import {User} from '../../models/User';
 
 @Component({
     selector: 'app-cart',
@@ -29,6 +30,8 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     productInOrders = [];
     total = 0;
     currentUser: JwtResponse;
+    name$;
+    name: string;
     userSubscription: Subscription;
 
     private updateTerms = new Subject<ProductInOrder>();
@@ -45,6 +48,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
     }
 
     ngOnInit() {
+      this.name$ = this.userService.name$.subscribe(aName => this.name = aName);
         this.cartService.getCart().subscribe(prods => {
             this.productInOrders = prods;
         });

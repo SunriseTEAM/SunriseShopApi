@@ -51,7 +51,7 @@ public class UserController {
             String jwt = jwtProvider.generate(authentication);
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             User user = userService.findOne(userDetails.getUsername());
-            return ResponseEntity.ok(new JwtResponse(jwt, user.getEmail(), user.getName(), user.getRole()));
+            return ResponseEntity.ok(new JwtResponse(jwt, user.getEmail(), user.getName(), user.getRole(), user.getAddress(),user.getPhone()));
         } catch (AuthenticationException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }

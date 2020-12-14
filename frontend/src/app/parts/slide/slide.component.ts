@@ -5,6 +5,8 @@ import {JwtResponse} from "../../response/JwtResponse";
 import {Router} from "@angular/router";
 import {Role} from "../../enum/Role";
 import {TranslateService} from '../../services/translate.service';
+import {OwlOptions} from 'ngx-owl-carousel-o';
+import {ProductInfo} from '../../models/productInfo';
 
 @Component({
     selector: 'app-slide',
@@ -39,6 +41,19 @@ export class SlideComponent implements OnInit, OnDestroy {
     root = '/';
     Role = Role;
 
+  customOptions: OwlOptions = {
+    dots: false,
+    responsive: {
+      0: { items: 1, margin: 5 },
+      430: { items: 2, margin: 5 },
+      550: { items: 3, margin: 5 },
+      670: { items: 4, margin: 5 },
+    },
+    autoplay: true,
+    loop: true,
+    autoplayTimeout: 3000,
+    lazyLoad: true,
+  }
 
     constructor(private userService: UserService,
                 private router: Router,

@@ -5,7 +5,7 @@
     <div class="container-fliud">
       <div class="wrapper row">
         <div class="preview col-md-6">
-      <img  class="card-img-top" style="width: 350px; height: 400px;margin: 0 145px" src="{{productInfo?.productIcon}}">
+      <img  class="card-img-top" style="width: 350px; height: 400px;margin: 0 145px" [imageZoom]="productInfo?.productIcon" [src]="productInfo?.productIcon">
       </div>
         <div class="details col-md-6" >
       <div class="card-body"  >
