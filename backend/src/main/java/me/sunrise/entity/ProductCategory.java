@@ -29,7 +29,6 @@ public class ProductCategory implements Serializable {
     @UpdateTimestamp
     private Date updateTime;
 
-
     public ProductCategory() {
     }
 

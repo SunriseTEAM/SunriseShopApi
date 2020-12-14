@@ -77,10 +77,10 @@
                           <img class="img-fluid w-100"
                                src="{{productInfo.productIcon}}"
                                alt="Sample" >
-
                         </div>
                       </a>
                       <!--/.Card image-->
+
                       <!--Card content-->
                       <div class="card-body text-center no-padding" style="color: #ff7315">
                         <h5>
@@ -88,11 +88,11 @@
                             <a [routerLink]="['/category', productInfo.productId]">{{productInfo.productName}}</a>
                           </strong>
                         </h5>
-                        <!--Card footer-->
 
+                        <!--Card footer-->
                           <div class="pt-4">
                             <h6 class="mb-3"><strong><span>{{productInfo.productPrice | currency}}</span></strong></h6>
-                            <button type="button" class="btn btn-primary btn-sm px-3 mr-1 mb-2" *ngIf="productInfo.productStatus == 0; else offBlock">
+                            <button type="button" class="btn btn-primary btn-sm px-3 mr-1 mb-2" *ngIf="productInfo.productStatus == 0; else offBlock" (click)="addToCart(productInfo)">
                               <i class="fa fa-shopping-cart pr-2"></i>
                             </button>
                             <ng-template #offBlock><button  class="btn btn-dark btn-sm px-3 mr-1 mb-2">Unavailable</button></ng-template>
@@ -100,15 +100,11 @@
                               <i class="fa fa-eye"></i>
                             </button>
                             <button type="button" class="btn btn-danger btn-sm px-3 mr-1 mb-2 material-tooltip-main"
-                                    data-toggle="tooltip" data-placement="top" title="Add to wishlist">
+                                    data-toggle="tooltip" data-placement="top" title="Add to wishlist" (click)="addToFavorite(productInfo)">
                               <i class="fa fa-heart"></i>
                             </button>
-
                           </div>
-
-
                         <!--Card footer-->
-
                       </div>
                       <!--/.Card content-->
                     </div>

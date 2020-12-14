@@ -1,9 +1,15 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 // import {prod, products} from '../shared/mockData';
 import {ProductService} from '../../services/product.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from "rxjs";
 import {TranslateService} from '../../services/translate.service';
+import {ProductInOrder} from '../../models/ProductInOrder';
+import {CartService} from '../../services/cart.service';
+import {CookieService} from 'ngx-cookie-service';
+import {UserService} from '../../services/user.service';
+import {ProductInfo} from '../../models/productInfo';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-card',
@@ -21,12 +27,16 @@ export class CardComponent implements OnInit, OnDestroy {
   productsList: any;
   productStatus = "getAllproduct";
   searchText
-
-
+  productInfo: any;
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
-              public translate: TranslateService
+              public translate: TranslateService,
+              private cartService: CartService,
+              private toastr: ToastrService,
+              private cookieService: CookieService,
+              private userService: UserService,
+              private router: Router,
               ) {}
 
   ngOnInit() {
@@ -36,7 +46,6 @@ export class CardComponent implements OnInit, OnDestroy {
     this.paramSub = this.route.params.subscribe(() => {
       this.update();
     });
-
   }
 
   ngOnDestroy(): void {
@@ -69,6 +78,26 @@ export class CardComponent implements OnInit, OnDestroy {
         });
     }
   }
+
+  addToCart(productInfo: any) {
+    this.cartService
+        .addItem(new ProductInOrder(productInfo))
+      .subscribe(
+        res => {
+          if (!res) {
+            console.log('Add Cart failed' + res);
+            throw new Error();
+          }
+          this.toastr.success('Add cart success!', 'Wow checkout now!');
+          this.router.navigateByUrl('/cart');
+        },
+        _ => console.log('Add Cart Failed')
+      );
+  }
+  addToFavorite(productInfo: any) {
+    this.productService.addFavouriteProduct(productInfo);
+  }
+
   setLang(lang: string) {
     // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
@@ -82,4 +111,7 @@ ShowProduct(productPrice: number) {
     const get200above = this.productStatus === '200above' && productPrice >= 200;
     return getAll || getunder25 || get25To50 || get50To100 || get100To200 || get200above ;
   }
+
+
+
 }

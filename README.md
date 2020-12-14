@@ -1,15 +1,11 @@
-# Online Shop Application
+# Website thời trang Online Sunrise Shop
 
-#### A full-stack Online Shop web application using Spring Boot 2 and Angular 7. 
-This is a Single Page Appliaction with client-side rendering. It includes backend and frontend two seperate projects. 
-The frontend client makes API calls to the backend server when it is running.
+#### A full-stack Fashion Online Shop web using Spring Boot 2 and Angular 7. 
 
-#### Live Demo: [https://springboot-angular-shop.herokuapp.com/](https://springboot-angular-shop.herokuapp.com/)
-
-> This project is based on my previous project [Online-Shopping-Store](https://github.com/zhulinn/Online-Shopping-Store), which uses FreeMarker as template engine for server-side rendering. 
+#### Live Demo: 
 
 ## Screenshot
-![](https://raw.githubusercontent.com/zhulinn/blog/hexo/source/uploads/post_pics/spring-angular/cart.png)
+![]()
 
 ## Features
 - REST API
@@ -31,17 +27,18 @@ The frontend client makes API calls to the backend server when it is running.
   - JWT Authentication
   - Spring Data JPA
   - Hibernate
-  - PostgreSQL
+  - MySQL
   - Maven
 
 **Frontend**
   - Angular 7
+  - Nodejs
   - Angular CLI
   - Bootstrap
 
 ## Database Schema
 
-![](https://raw.githubusercontent.com/zhulinn/blog/hexo/source/uploads/post_pics/spring-angular/db.png)
+![]()
 
 ## How to  Run
 
@@ -49,7 +46,7 @@ Start the backend server before the frontend client.
 
 **Backend**
 
-  1. Install [PostgreSQL](https://www.postgresql.org/download/) 
+  1. Install [MySQL](https://www.mysql.com/downloads/) 
   2. Configure datasource in `application.yml`.
   3. `cd backend`.
   4. Run `mvn install`.
@@ -66,21 +63,3 @@ Start the backend server before the frontend client.
   
 Note: The backend API url is configured in `src/environments/environment.ts` of the frontend project. It is `localhost:8080/api` by default.
   
-#### Run in Docker
-You can build the image and run the container with Docker. 
-1. Build backend project
-```bash
-cd backend
-mvn package
-```
-2. Build fontend project
-```bash
-cd frontend
-npm install
-ng build --prod
-```
-3. Build images and run containers
-```bash
-docker-compose up --build
-```
-

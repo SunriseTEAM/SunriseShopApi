@@ -11,13 +11,17 @@ import {apiUrl} from "../../environments/environment";
 export class OrderService {
 
     private orderUrl = `${apiUrl}/order`;
-
+    private orderUrl1 = `${apiUrl}/order/chart`;
     constructor(private http: HttpClient) {
     }
 
     getPage(page = 1, size = 10): Observable<any> {
         return this.http.get(`${this.orderUrl}?page=${page}&size=${size}`).pipe();
     }
+
+  getPage1(page = 1, size = 10): Observable<any> {
+    return this.http.get(`${this.orderUrl}?page=${page}&size=${size}`).pipe();
+  }
 
     show(id): Observable<Order> {
         return this.http.get<Order>(`${this.orderUrl}/${id}`).pipe(

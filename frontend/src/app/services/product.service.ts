@@ -5,6 +5,7 @@ import {catchError} from 'rxjs/operators';
 import {ProductInfo} from '../models/productInfo';
 import {apiUrl} from '../../environments/environment';
 import {Category} from '../models/Category';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,8 @@ export class ProductService {
     private categoryUrl = `${apiUrl}/category`;
   private baseurl = 'http://localhost:8080/api/delete/product';
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,
+                private toastr: ToastrService,) {
 
     }
 
@@ -67,7 +69,22 @@ export class ProductService {
   deleteProduct1(productId: ProductInfo): Observable<any> {
     return this.http.delete<any>(`${this.baseurl}/${productId}`);
   }
+  addFavouriteProduct(productInfo: ProductInfo) {
 
+    const a: ProductInfo[] = JSON.parse(localStorage.getItem("avf_item")) || [];
+    a.push(productInfo);
+    this.toastr.success("Adding Product", "Adding Product as Favourite");
+    setTimeout(() => {
+      localStorage.setItem("avf_item", JSON.stringify(a));
+    }, 1500);
+
+  }
+  getLocalFavouriteProducts(): ProductInfo[] {
+    const productInfo: ProductInfo[] =
+      JSON.parse(localStorage.getItem("avf_item")) || [];
+
+    return productInfo;
+  }
 
     /**
      * Handle Http operation that failed.

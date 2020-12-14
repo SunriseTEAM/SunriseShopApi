@@ -10,6 +10,8 @@ import {Cart} from '../models/Cart';
 import {Item} from '../models/Item';
 import {JwtResponse} from '../response/JwtResponse';
 import {ProductInOrder} from '../models/ProductInOrder';
+import {ProductInfo} from '../models/productInfo';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable({
     providedIn: 'root'
@@ -32,6 +34,7 @@ export class CartService {
 
     constructor(private http: HttpClient,
                 private cookieService: CookieService,
+                private toastr: ToastrService,
                 private userService: UserService) {
         this.itemsSubject = new BehaviorSubject<Item[]>(null);
         this.items = this.itemsSubject.asObservable();
@@ -95,6 +98,7 @@ export class CartService {
         }
     }
 
+
     update(productInOrder): Observable<ProductInOrder> {
 
         if (this.currentUser) {
@@ -123,7 +127,9 @@ export class CartService {
     storeLocalCart() {
         this.cookieService.set('cart', JSON.stringify(this.localMap));
     }
-
+  storeLocalCart1() {
+    this.cookieService.set('favorite', JSON.stringify(this.localMap));
+  }
     clearLocalCart() {
         console.log('clear local cart');
         this.cookieService.delete('cart');

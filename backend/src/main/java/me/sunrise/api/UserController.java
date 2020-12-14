@@ -1,5 +1,6 @@
 package me.sunrise.api;
 
+import me.sunrise.entity.ProductInfo;
 import me.sunrise.entity.User;
 import me.sunrise.security.JWT.JwtProvider;
 import me.sunrise.service.UserService;
@@ -97,6 +98,22 @@ public class UserController {
 
         return userPage;
     }
+
+
+    @PutMapping("/edit/user/{id}")
+    public ResponseEntity edit(@PathVariable("id") Long id,
+                               @Valid @RequestBody User user,
+                               BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().body(bindingResult);
+        }
+        if (!id.equals(user.getId())) {
+            return ResponseEntity.badRequest().body("Id Not Matched");
+        }
+
+        return ResponseEntity.ok(userService.updateUser(user));
+    }
+
     @DeleteMapping("/delete/user/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         userService.delete(id);

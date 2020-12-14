@@ -10,6 +10,7 @@ import {User} from '../../models/User';
 import {JwtResponse} from '../../response/JwtResponse';
 import {TranslateService} from '../../services/translate.service';
 import {ProductStatus} from '../../enum/ProductStatus';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-detail',
@@ -27,6 +28,7 @@ export class DetailComponent implements OnInit {
       private cartService: CartService,
       private cookieService: CookieService,
       private route: ActivatedRoute,
+      private toastr: ToastrService,
       private userService: UserService,
       private router: Router,
       public translate: TranslateService
@@ -67,6 +69,7 @@ export class DetailComponent implements OnInit {
                 console.log('Add Cart failed' + res);
                 throw new Error();
               }
+              this.toastr.success('Add cart success!', 'Wow checkout now!');
               this.router.navigateByUrl('/cart');
             },
             _ => console.log('Add Cart Failed')

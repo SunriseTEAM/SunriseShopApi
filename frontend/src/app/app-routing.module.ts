@@ -26,6 +26,8 @@ import {AboutComponent} from './parts/about/about.component';
 import {ContactComponent} from './parts/contact/contact.component';
 import {UserListComponent} from './pages/user-list/user.list.component';
 import {UserNewComponent} from './pages/user-new/user-new.component';
+import {ChartComponent} from './pages/chart/chart.component';
+import {FavoriteComponent} from './pages/favorite/favorite.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/slide', pathMatch: 'full'},
@@ -37,6 +39,7 @@ const routes: Routes = [
     {path: 'logout', component: LoginComponent},
     {path: 'register', component: SignupComponent},
     {path: 'cart', component: CartComponent},
+    {path: 'favorite', component: FavoriteComponent},
     {path: 'success', component: SignupComponent},
     {path: 'order/:id', component: OrderDetailComponent, canActivate: [AuthGuard]},
     {path: 'order', component: OrderComponent, canActivate: [AuthGuard]},
@@ -111,6 +114,11 @@ const routes: Routes = [
   },
   {path: 'user/new',
     component: UserNewComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.Manager]}
+  },
+  {path: 'chart',
+    component: ChartComponent,
     canActivate: [AuthGuard],
     data: {roles: [Role.Manager]}
   },

@@ -41,6 +41,9 @@ import {TranslateService} from './services/translate.service';
 import {TranslatePipe} from './pipes/translate.pipe';
 import {ToastrModule} from 'ngx-toastr';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import {ChartComponent} from './pages/chart/chart.component';
+import {ChartsModule} from 'ng2-charts';
+import {FavoriteComponent} from './pages/favorite/favorite.component';
 
 
 
@@ -79,6 +82,9 @@ export function setupTranslateFactory(service: TranslateService) {
       ContactComponent,
       FooterComponent,
       TranslatePipe,
+      ChartComponent,
+      FavoriteComponent,
+
 
     ],
     imports: [
@@ -88,6 +94,7 @@ export function setupTranslateFactory(service: TranslateService) {
         FormsModule,
         HttpClientModule,
         Ng2SearchPipeModule,
+        ChartsModule,
         NgxSpinnerModule,
       ToastrModule.forRoot(),
 
