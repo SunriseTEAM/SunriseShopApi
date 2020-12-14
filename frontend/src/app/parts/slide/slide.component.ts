@@ -39,6 +39,7 @@ export class SlideComponent implements OnInit, OnDestroy {
     root = '/';
     Role = Role;
 
+
     constructor(private userService: UserService,
                 private router: Router,
                 public translate: TranslateService,

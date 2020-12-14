@@ -85,7 +85,6 @@ export function setupTranslateFactory(service: TranslateService) {
       ChartComponent,
       FavoriteComponent,
 
-
     ],
     imports: [
         BrowserModule,

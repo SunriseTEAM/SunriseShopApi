@@ -15,6 +15,60 @@ router-outlet ~ * {
   width: 100%;
 }
 
+
+
+.page-header{
+  text-align: center;
+}
+
+/*social buttons*/
+.btn-social{
+  color: white;
+  opacity:0.9;
+}
+.btn-social:hover {
+  color: white;
+  opacity:1;
+}
+.btn-facebook {
+  background-color: #3b5998;
+  opacity:0.9;
+}
+.btn-twitter {
+  background-color: #00aced;
+  opacity:0.9;
+}
+.btn-linkedin {
+  background-color:#0e76a8;
+  opacity:0.9;
+}
+.btn-github{
+  background-color:#000000;
+  opacity:0.9;
+}
+.btn-google {
+  background-color: #c32f10;
+  opacity: 0.9;
+}
+.btn-stackoverflow{
+  background-color: #D38B28;
+  opacity: 0.9;
+}
+
+
+
+
+/*.view img {*/
+/*  padding: 0px;*/
+/*  transform: scale(1);*/
+/*  transition: all 0.5s;*/
+/*}*/
+/*.view img:hover {*/
+/*  transform: scale(0.9);*/
+/*}*/
+
+/*-- easy responsive tabs style--*/
+
 /*  Header  */
 header.trasparent_nav{
   width: 100%;

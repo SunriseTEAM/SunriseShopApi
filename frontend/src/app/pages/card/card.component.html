@@ -88,12 +88,12 @@
                             <a [routerLink]="['/category', productInfo.productId]">{{productInfo.productName}}</a>
                           </strong>
                         </h5>
-
+                        <h6 class="mb-3"><strong><span>{{productInfo.productPrice | currency}}</span></strong></h6>
                         <!--Card footer-->
-                          <div class="pt-4">
-                            <h6 class="mb-3"><strong><span>{{productInfo.productPrice | currency}}</span></strong></h6>
+
+
                             <button type="button" class="btn btn-primary btn-sm px-3 mr-1 mb-2" *ngIf="productInfo.productStatus == 0; else offBlock" (click)="addToCart(productInfo)">
-                              <i class="fa fa-shopping-cart pr-2"></i>
+                              <i class="fa fa-shopping-cart pr-2"></i>Add to card
                             </button>
                             <ng-template #offBlock><button  class="btn btn-dark btn-sm px-3 mr-1 mb-2">Unavailable</button></ng-template>
                             <button type="button" class="btn btn-secondary btn-sm px-3 mr-1 mb-2" routerLink="/product/{{productInfo.productId}}" >
@@ -103,7 +103,7 @@
                                     data-toggle="tooltip" data-placement="top" title="Add to wishlist" (click)="addToFavorite(productInfo)">
                               <i class="fa fa-heart"></i>
                             </button>
-                          </div>
+
                         <!--Card footer-->
                       </div>
                       <!--/.Card content-->

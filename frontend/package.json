@@ -23,6 +23,7 @@
     "chart.js": "^2.9.4",
     "core-js": "^2.5.4",
     "jquery": "^3.3.1",
+    "js-image-zoom": "^0.7.0",
     "ng2-charts": "^2.2.3",
     "ng2-search-filter": "^0.5.1",
     "ngx-cookie-service": "^2.1.0",
