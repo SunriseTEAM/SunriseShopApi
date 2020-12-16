@@ -21,7 +21,7 @@ export class ChartComponent implements OnInit, OnDestroy  {
     responsive: true,
   };
   public pieChartLabels: Label[] = [['Finish'], ['Pending'], 'Cancel'];
-  public pieChartData: SingleDataSet = [300, 500, 100];
+  public pieChartData: SingleDataSet = [100, 500, 100];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];

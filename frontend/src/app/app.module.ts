@@ -50,6 +50,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
 
 
 
+
 export function setupTranslateFactory(service: TranslateService) {
   return () => service.use("en");
 }
@@ -69,24 +70,25 @@ export function setupTranslateFactory(service: TranslateService) {
         ProductListComponent,
         UserDetailComponent,
         ProductEditComponent,
-      CategoryComponent,
-      ProductNewComponent,
-      CategoryNewComponent,
-      CategoryEditComponent,
-      UserListComponent,
-      UserNewComponent,
-      SlideComponent,
-      SizeComponent,
-      ReturnPolicyComponent,
-      WarrantyComponent,
-      ShippingComponent,
-      StoreComponent,
-      AboutComponent,
-      ContactComponent,
-      FooterComponent,
-      TranslatePipe,
-      ChartComponent,
-      FavoriteComponent,
+        CategoryComponent,
+        ProductNewComponent,
+        CategoryNewComponent,
+        CategoryEditComponent,
+        UserListComponent,
+        UserNewComponent,
+        SlideComponent,
+        SizeComponent,
+        ReturnPolicyComponent,
+        WarrantyComponent,
+        ShippingComponent,
+        StoreComponent,
+        AboutComponent,
+        ContactComponent,
+        FooterComponent,
+        TranslatePipe,
+        ChartComponent,
+        FavoriteComponent,
+
 
     ],
     imports: [
