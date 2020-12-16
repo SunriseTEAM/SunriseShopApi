@@ -6,7 +6,6 @@
   <div class="row">
     <div class="col-sm">
 
-
       <div class="row" >
         <div class="col-md-3" style="border-right: 1px solid #dddddd;" >
           <!-- Section: Filters -->
@@ -72,8 +71,8 @@
                     <!--Card-->
                     <div class="card card-cascade wider" >
                       <!--Card image-->
-                      <a  style="width:219px; height:220px" >
-                        <div class="view zoom overlay z-depth-2 rounded">
+                      <a  style="width:219px; height:220px"  routerLink="/product/{{productInfo.productId}}">
+                        <div class="viewimg zoom overlay z-depth-2 rounded">
                           <img class="img-fluid w-100"
                                src="{{productInfo.productIcon}}"
                                alt="Sample" >
@@ -83,11 +82,11 @@
 
                       <!--Card content-->
                       <div class="card-body text-center no-padding" style="color: #ff7315">
-                        <h5>
+                        <h6 style=" height:40px; font-size: 17px">
                           <strong>
-                            <a [routerLink]="['/category', productInfo.productId]">{{productInfo.productName}}</a>
+                            <a routerLink="/product/{{productInfo.productId}}">{{productInfo.productName}}</a>
                           </strong>
-                        </h5>
+                        </h6>
                         <h6 class="mb-3"><strong><span>{{productInfo.productPrice | currency}}</span></strong></h6>
                         <!--Card footer-->
 
