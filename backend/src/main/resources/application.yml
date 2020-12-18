@@ -3,16 +3,16 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 123456
-    url: jdbc:mysql://localhost:3306/demo1
-    platform: demo1
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/demo
+    platform: demo
     initialization-mode: always
     continue-on-error: true
   jpa:
     show-sql: false
-#    generate-ddl: true
+    #    generate-ddl: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     database: mysql
     properties:
       hibernate:
@@ -30,7 +30,7 @@ spring:
 server:
   servlet:
     contextPath: /api
-
- # thời điểm token sẽ hết hạn và chuỗi jwtSecret!
+  port: ${PORT:8080}
+  # thời điểm token sẽ hết hạn và chuỗi jwtSecret!
 jwtSecret: me.sunrise
 jwtExpiration: 86400
