@@ -66,7 +66,6 @@ public class ProductController {
         if (!productId.equals(product.getProductId())) {
             return ResponseEntity.badRequest().body("Id Not Matched");
         }
-
         return ResponseEntity.ok(productService.update(product));
     }
 
