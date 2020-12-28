@@ -1,5 +1,4 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-// import {prod, products} from '../shared/mockData';
 import {ProductService} from '../../services/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Subscription} from "rxjs";
@@ -100,7 +99,6 @@ export class BestProductComponent implements OnInit, OnDestroy {
   }
 
   setLang(lang: string) {
-    // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
   }
 ShowProduct(productPrice: number) {

@@ -54,14 +54,7 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
         });
 
         this.sub = this.updateTerms.pipe(
-            // wait 300ms after each keystroke before considering the term
             debounceTime(300),
-            //
-            // ignore new term if same as previous term
-            // Same Object Reference, not working here
-            //  distinctUntilChanged((p: ProductInOrder, q: ProductInOrder) => p.count === q.count),
-            //
-            // switch to new search observable each time the term changes
             switchMap((productInOrder: ProductInOrder) => this.cartService.update(productInOrder))
         ).subscribe(prod => {
                 if (prod) { throw new Error(); }
@@ -128,7 +121,6 @@ export class CartComponent implements OnInit, OnDestroy, AfterContentChecked {
 
     }
   setLang(lang: string) {
-    // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
   }
 }

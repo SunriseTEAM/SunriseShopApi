@@ -20,19 +20,23 @@ export class AuthGuard implements CanActivate {
         state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         const currentUser = this.userService.currentUserValue;
         if (currentUser) {
-            // check if route is restricted by role
+
+// kiểm tra xem route có bị hạn chế bởi vai trò không
             if (route.data.roles && route.data.roles.indexOf(currentUser.role) === -1) {
                 console.log(currentUser.role + "fail in " + route.data.roles);
-                // role not authorised so redirect to home page
+
+// vai trò không được ủy quyền nên chuyển hướng đến trang chủ
                 this.router.navigate(['/']);
                 return false;
             }
-            // authorised so return true
+
+// được ủy quyền nên trả về true
             return true;
         }
 
         console.log("Need log in");
-        // not logged in so redirect to login page with the return url{queryParams: {returnUrl: state.url}}
+
+// chưa đăng nhập nên chuyển hướng đến trang đăng nhập
         this.router.navigate(['/login'], {queryParams: {returnUrl: state.url}});
         return false;
     }

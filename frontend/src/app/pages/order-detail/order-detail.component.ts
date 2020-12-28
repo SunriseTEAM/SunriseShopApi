@@ -18,10 +18,7 @@ export class OrderDetailComponent implements OnInit {
     order$: Observable<Order>;
 
     ngOnInit() {
-        // this.items$ = this.route.paramMap.pipe(
-        //     map(paramMap =>paramMap.get('id')),
-        //     switchMap((id:string) => this.orderService.show(id))
-        // )
+
         this.order$ = this.orderService.show(this.route.snapshot.paramMap.get('id'));
     }
 

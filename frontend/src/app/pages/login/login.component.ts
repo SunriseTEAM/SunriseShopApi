@@ -63,7 +63,6 @@ export class LoginComponent implements OnInit {
     }
 
   setLang(lang: string) {
-    // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
   }
 }

@@ -100,7 +100,6 @@ export class NewProductComponent implements OnInit, OnDestroy {
   }
 
   setLang(lang: string) {
-    // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
   }
 ShowProduct(productPrice: number) {

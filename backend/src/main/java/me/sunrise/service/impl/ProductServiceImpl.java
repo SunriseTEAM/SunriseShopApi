@@ -117,7 +117,7 @@ public class ProductServiceImpl implements ProductService {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
 
-        //更新
+
         productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
         return productInfoRepository.save(productInfo);
     }

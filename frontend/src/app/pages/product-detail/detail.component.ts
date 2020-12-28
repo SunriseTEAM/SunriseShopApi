@@ -6,8 +6,6 @@ import {CookieService} from 'ngx-cookie-service';
 import {ProductInOrder} from '../../models/ProductInOrder';
 import {ProductInfo} from '../../models/productInfo';
 import {UserService} from '../../services/user.service';
-import {User} from '../../models/User';
-import {JwtResponse} from '../../response/JwtResponse';
 import {TranslateService} from '../../services/translate.service';
 import {ProductStatus} from '../../enum/ProductStatus';
 import {ToastrService} from 'ngx-toastr';
@@ -41,14 +39,7 @@ export class DetailComponent implements OnInit {
     this.count = 1;
   }
 
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   // Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-  //   // Add '${implements OnChanges}' to the class.
-  //   console.log(changes);
-  //   if (this.item.quantity in changes) {
 
-  //   }
-  // }
 
   getProduct(): void {
     const id = this.route.snapshot.paramMap.get('id');
